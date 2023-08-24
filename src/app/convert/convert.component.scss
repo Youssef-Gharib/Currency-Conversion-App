@@ -1,0 +1,104 @@
+.container {
+  width: 1728px;
+  height: 1118px;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  background-image: url("../../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  fill: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.4) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  margin-bottom: -7px;
+}
+.logo {
+  background: url("../../assets/concurrency-logo.png"),
+    // lightgray 50%
+    transparent 50% / cover no-repeat;
+  position: absolute;
+  width: 307px;
+  height: 68.489px;
+  display: flex;
+  flex-shrink: 0;
+  margin: 90.8px 1200px 952px 221px;
+}
+.card {
+  width: 783px;
+  height: 768.308px;
+  position: absolute;
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 21.314px;
+  background: linear-gradient(
+    134deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(157, 157, 157, 0.2) 100%
+  );
+  backdrop-filter: blur(5.264404296875px);
+  margin: 191px 472px 159px 473px;
+}
+.elements-container {
+  width: 555px;
+  height: 596.214px;
+  flex-shrink: 0;
+  position: relative;
+}
+.toggle-button-container {
+  display: flex;
+  width: 552.519px;
+  height: 95.23px;
+  padding: 17.661px;
+  justify-content: center;
+  align-items: center;
+  gap: 17.661px;
+  flex-shrink: 0;
+  border-radius: 39.778px;
+  background: #f0f0f0;
+  position: absolute;
+  margin: 86px 115.32px 587.08px 115.16px;
+}
+#convert {
+  display: flex;
+  width: 239.088px;
+  height: 81.047px;
+  padding: 16.113px;
+  justify-content: center;
+  align-items: center;
+  gap: 16.113px;
+  flex-shrink: 0;
+  border-radius: 36.292px;
+  background: #fff;
+}
+#compare {
+  display: flex;
+  width: 189.657px;
+  height: 81.282px;
+  padding: 16.113px;
+  justify-content: center;
+  align-items: center;
+  gap: 16.113px;
+  flex-shrink: 0;
+  border-radius: 36.292px;
+}
+.toggle-button span {
+  color: #141414;
+  font-family: Poppins;
+  font-size: 24.314px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.forms-container {
+  width: 555px;
+  height: 470.429px;
+  flex-shrink: 0;
+}
+.input-container {
+  width: 555px;
+  height: 320.667px;
+  flex-shrink: 0;
+}

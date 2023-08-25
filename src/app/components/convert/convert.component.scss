@@ -1,10 +1,7 @@
 .container {
   width: 1728px;
   height: 1118px;
-  display: flex;
-  flex-shrink: 0;
-  position: relative;
-  background-image: url("../../assets/background.jpg");
+  background-image: url("../../../assets/images/backgroun.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -16,22 +13,16 @@
   margin-bottom: -7px;
 }
 .logo {
-  background: url("../../assets/concurrency-logo.png"),
+  background: url("../../../assets/concurrency-logo.png"),
     // lightgray 50%
     transparent 50% / cover no-repeat;
-  position: absolute;
   width: 307px;
   height: 68.489px;
   display: flex;
-  flex-shrink: 0;
-  margin: 90.8px 1200px 952px 221px;
 }
-.card {
+.convert-card {
   width: 783px;
   height: 768.308px;
-  position: absolute;
-  display: flex;
-  flex-shrink: 0;
   border-radius: 21.314px;
   background: linear-gradient(
     134deg,
@@ -39,7 +30,8 @@
     rgba(157, 157, 157, 0.2) 100%
   );
   backdrop-filter: blur(5.264404296875px);
-  margin: 191px 472px 159px 473px;
+  margin: 191px auto 158.6px;
+  border: 1px solid rgb(147, 147, 147);
 }
 .elements-container {
   width: 555px;

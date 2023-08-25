@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConvertComponent } from './convert/convert.component';
-import { CompareComponent } from './compare/compare.component';
+import { ConvertComponent } from './components/convert/convert.component';
+import { CompareComponent } from './components/compare/compare.component';
 
 const routes: Routes = [
   { path: '', component: ConvertComponent },

@@ -26,6 +26,8 @@ module.exports = {
     extend: {
       spacing: {
         "space-1.8": "1.893px",
+        "space-13": "13.787px",
+        "space-15": "15.111px",
         "space-16": "16.113px",
         "space-27": "27.323px",
         "space-81": "81.047px",
@@ -33,6 +35,9 @@ module.exports = {
         "space-81": "81.047px",
         "space-84": "84.571px",
         "space-555": "555px",
+      },
+      gap:{
+        "gap1":"95.392px",
       },
 
       backgroundColor:{
@@ -45,6 +50,7 @@ module.exports = {
 
       borderRadius:{
         radius21:"21.314px",
+        radius31:"31.053px",
         radius34:"34.154px",
         radius36:"36.292px",
         radius39:"39.292px",

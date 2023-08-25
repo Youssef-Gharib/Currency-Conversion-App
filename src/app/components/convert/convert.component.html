@@ -1,7 +1,7 @@
 <div class="container">
   <div class="logo"></div>
-  <div class="convert-card">
-    <toggle-btns [toggleData]="toggleData" (setActive$)=""></toggle-btns>
+  <div class="convert-card flex flex-col justify-center items-center">
+    <toggle-btns [toggleData]="toggleData" (setActive$)="activeTab = $event"></toggle-btns>
     <button class="btn blue-btn">Convert</button>
   </div>
 </div>

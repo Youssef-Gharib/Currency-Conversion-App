@@ -1,1 +1,43 @@
-<p>favorites works!</p>
+<div
+  class="fav-card-container w-[468.575px] h-[770.701px] rounded-[29.612px] bg-#white shrink-0"
+>
+  <div class="relative fav-card">
+    <button class="close-btn" (click)="close$.emit(false)">
+      <img src="../../../assets/icons/x.svg" alt="" />
+    </button>
+
+    <div class="fav-card-elements">
+      <!--give full height and full width-->
+      <div class="fav-card-title">
+        <span class="card-title">My Favorites</span>
+      </div>
+
+      <!-- <div *ngFor="let currency in currencies "> -->
+      <div class="fav-currency-block">
+        <div class="currency-logo-info">
+          <div class="currency-logo">
+            <img src="../../../assets/images/united-states-of-america1.svg" />
+          </div>
+          <div class="currency-info">
+            <p class="fav-currency-title">USD</p>
+            <p class="fav-currency-label">CURRENCY</p>
+          </div>
+        </div>
+        <div class="custom-checkbox">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox-0"
+            class="checkbox-item"
+          />
+          <label for="checkbox-0" class="checkbox-label"></label>
+        </div>
+      </div>
+      <!-- end of blocks container -->
+
+      <!-- </div> end of fav-currency-block -->
+    </div>
+    <!-- fav-card-elements -->
+  </div>
+  <!--fav-card-container -->
+</div>

@@ -43,7 +43,7 @@
   @apply text-[#121212] text-[31.63px] font-normal leading-[42.173px] not-italic;
 }
 .currency-block {
-  @apply shrink-0 flex justify-between items-start border-b-[1.757px] border-opacity-[0.2] border-[#b9c1d9];
+  @apply shrink-0 flex justify-between items-start border-b-[1.757px] border-opacity-[0.2] border-[#b9c1d9] pb-6;
 }
 .currency-logo-info {
   @apply flex justify-between;

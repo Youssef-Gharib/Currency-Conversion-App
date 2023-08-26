@@ -2,10 +2,14 @@
   @apply fixed inset-0 z-20 bg-[linear-gradient(180deg,rgba(13,13,13,0.90)_0%,rgba(217,217,217,0.00)_100%)] flex items-start justify-end pt-[256.01px] pr-[371px];
 }
 .fav-card {
-  @apply w-[468.575px] h-[770.701px] rounded-[29.612px] z-30 bg-white relative overflow-auto;
+  @apply w-[468.575px] h-[770.701px] rounded-[29.612px] relative bg-white;
 }
+.close-btn {
+  @apply w-[71.223px] h-[71.223px] rounded-[50%] absolute top-[-2rem] right-7 flex justify-center items-center bg-white;
+}
+
 .fav-card-elements {
-  @apply flex flex-col items-start gap-[21.558px] pt-[40.1px] px-[14.1px] w-full h-full; // review padding here
+  @apply flex flex-col items-start gap-[21.558px] pt-[40.1px] px-[14.1px] w-full h-full overflow-auto; // review padding here
 }
 .card-title {
   @apply text-[#121212] font-["Montserrat"] text-[24.253px] font-medium not-italic leading-[32.338px];
@@ -48,8 +52,4 @@
 
 .custom-checkbox input[type="checkbox"]:checked + label {
   background-image: url("../../../assets/icons/Group.svg");
-}
-
-.close-btn {
-  @apply w-[71.223px] h-[71.223px] rounded-[50%]  absolute flex justify-center items-center  z-40 right-0 bg-blue-100;
 }

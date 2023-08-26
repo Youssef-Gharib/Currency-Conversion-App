@@ -12,6 +12,7 @@ import { ToggleBtnsComponent } from './components/toggle-btns/toggle-btns.compon
 import { DropdwonComponent } from './components/dropdwon/dropdwon.component';
 import { LiveRatesComponent } from './components/live-rates/live-rates.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { CurrencyBlockComponent } from './components/currency-block/currency-block.component';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     DropdwonComponent,
     LiveRatesComponent,
     FavoritesComponent,
+    CurrencyBlockComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

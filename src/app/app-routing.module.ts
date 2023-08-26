@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConvertComponent } from './components/convert/convert.component';
-import { CompareComponent } from './components/compare/compare.component';
+
 
 const routes: Routes = [
-  { path: '', component: ConvertComponent },
-  { path: 'convert', component: ConvertComponent },
-  { path: 'compare', component: CompareComponent },
+  {
+    path: 'currency-converter',
+    loadChildren: () => import('./currency-converter/currency-converter.module').then(m => m.CurrencyConverterModule)
+  },
+  { path: '', redirectTo: 'currency-converter', pathMatch: 'full' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

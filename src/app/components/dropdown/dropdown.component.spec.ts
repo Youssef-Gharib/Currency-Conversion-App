@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DropdwonComponent } from './dropdwon.component';
+import { DropdownComponent } from './dropdown.component';
 
-describe('DropdwonComponent', () => {
-  let component: DropdwonComponent;
-  let fixture: ComponentFixture<DropdwonComponent>;
+describe('DropdownComponent', () => {
+  let component: DropdownComponent;
+  let fixture: ComponentFixture<DropdownComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DropdwonComponent]
+      declarations: [DropdownComponent]
     });
-    fixture = TestBed.createComponent(DropdwonComponent);
+    fixture = TestBed.createComponent(DropdownComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

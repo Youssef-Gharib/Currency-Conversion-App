@@ -1,9 +1,5 @@
 import { Component , Input, Output, EventEmitter, OnInit} from '@angular/core';
-
-export interface ToggleDataModel{
-  title: string;
-  status: string;
-}
+import { IToggleDataModel } from 'src/app/models/toggle.model';
 
 @Component({
   selector: 'toggle-btns',
@@ -18,7 +14,7 @@ export interface ToggleDataModel{
   styleUrls: ['./toggle-btns.component.scss']
 })
 export class ToggleBtnsComponent implements OnInit {
-  @Input() toggleData: ToggleDataModel[]=[] ;
+  @Input() toggleData: IToggleDataModel[]=[] ;
   @Input() activeBtn?: string ;
 
   @Output() setActive$ = new EventEmitter<string>();

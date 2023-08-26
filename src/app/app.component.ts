@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AppService } from './app.service';
-import { ICurrencies } from './icurrencies';
+import { AppService } from './services/app.service';
+import { ICurrencies } from './models/icurrencies';
 
 @Component({
   selector: 'app-root',

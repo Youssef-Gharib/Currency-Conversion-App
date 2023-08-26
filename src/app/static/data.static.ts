@@ -1,5 +1,6 @@
-import { ToggleDataModel } from '../components/toggle-btns/toggle-btns.component';
-export const ToggleStaticsData: ToggleDataModel[] = [
+import { IToggleDataModel } from "../models/toggle.model";
+
+export const ToggleStaticsData: IToggleDataModel[] = [
   {
     title: 'Convert',
     status: 'convert',
@@ -8,9 +9,4 @@ export const ToggleStaticsData: ToggleDataModel[] = [
     title: 'Compare',
     status: 'compare',
   },
-];
-
-export const ToggleStaticsData1 = [
-  ...ToggleStaticsData,
-  { title: 'test', status: 'test' },
 ];

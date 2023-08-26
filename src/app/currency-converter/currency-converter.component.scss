@@ -1,0 +1,76 @@
+.convert-card {
+    border-radius: 21.314px;
+    background: linear-gradient(134deg,
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(157, 157, 157, 0.2) 100%);
+    backdrop-filter: blur(5.264404296875px);
+    border: 1px solid rgb(147, 147, 147);
+}
+
+.elements-container {
+    width: 555px;
+    height: 596.214px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.toggle-button-container {
+    display: flex;
+    width: 552.519px;
+    height: 95.23px;
+    padding: 17.661px;
+    justify-content: center;
+    align-items: center;
+    gap: 17.661px;
+    flex-shrink: 0;
+    border-radius: 39.778px;
+    background: #f0f0f0;
+    position: absolute;
+    margin: 86px 115.32px 587.08px 115.16px;
+}
+
+#convert {
+    display: flex;
+    width: 239.088px;
+    height: 81.047px;
+    padding: 16.113px;
+    justify-content: center;
+    align-items: center;
+    gap: 16.113px;
+    flex-shrink: 0;
+    border-radius: 36.292px;
+    background: #fff;
+}
+
+#compare {
+    display: flex;
+    width: 189.657px;
+    height: 81.282px;
+    padding: 16.113px;
+    justify-content: center;
+    align-items: center;
+    gap: 16.113px;
+    flex-shrink: 0;
+    border-radius: 36.292px;
+}
+
+.toggle-button span {
+    color: #141414;
+    font-family: Poppins;
+    font-size: 24.314px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.forms-container {
+    width: 555px;
+    height: 470.429px;
+    flex-shrink: 0;
+}
+
+.input-container {
+    width: 555px;
+    height: 320.667px;
+    flex-shrink: 0;
+}

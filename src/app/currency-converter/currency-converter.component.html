@@ -1,7 +1,8 @@
-
-
-    <div class="convert-card py-[76.23px] px-[98.6px] w-[700px] mx-auto">
-        <toggle-btns [toggleData]="toggleData" (setActive$)="activeTab = $event"></toggle-btns>
-        <app-convert *ngIf="activeTab === 'convert'"></app-convert>
-        <app-compare *ngIf="activeTab === 'compare'"></app-compare>
-    </div>
+<div class="convert-card py-[76.23px] px-[98.6px] w-[700px] mx-auto">
+  <toggle-btns
+    [toggleData]="toggleData"
+    (setActive$)="activeTab = $event"
+  ></toggle-btns>
+  <app-convert *ngIf="activeTab === 'convert'"></app-convert>
+  <app-compare *ngIf="activeTab === 'compare'"></app-compare>
+</div>

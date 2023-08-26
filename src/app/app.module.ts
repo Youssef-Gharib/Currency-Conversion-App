@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LiveRatesComponent } from './components/live-rates/live-rates.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { CurrencyBlockComponent } from './components/currency-block/currency-block.component';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -14,14 +15,15 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
     AppComponent,
     LiveRatesComponent,
     FavoritesComponent,
+    CurrencyBlockComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

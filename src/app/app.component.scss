@@ -1,1 +1,22 @@
 
+.wrapper {
+  
+  background-image: url("../assets/images/backgroun.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  fill: linear-gradient(
+    180deg,
+    rgba(13, 13, 13, 0.4) 0%,
+    rgba(217, 217, 217, 0) 100%
+  );
+  margin-bottom: -7px;
+}
+.logo {
+  background: url("../assets/concurrency-logo.png"),
+    // lightgray 50%
+    transparent 50% / cover no-repeat;
+  width: 307px;
+  height: 68.489px;
+  margin: 0px 111px 0 112px;
+}

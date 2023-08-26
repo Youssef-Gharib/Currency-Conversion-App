@@ -17,11 +17,13 @@ module.exports = {
       black: {
         DEFAULT:"#000",
         100:'#141414',
-        200:"#202020"
+        200:"#202020",
+        300:"#C5C5C5"
       }
     },
     fontSize: {
-      textbtn: '27.323px',
+      size23: '23.379px',
+      size20: '20.456px' ,
     },
     extend: {
       spacing: {
@@ -30,10 +32,12 @@ module.exports = {
         "space-15": "15.111px",
         "space-16": "16.113px",
         "space-27": "27.323px",
-        "space-81": "81.047px",
+        "space-70": "70.136px",
         "space-74": " 74px",
         "space-81": "81.047px",
+        "space-81": "81.047px",
         "space-84": "84.571px",
+        "space-222": "222px",
         "space-555": "555px",
       },
       gap:{

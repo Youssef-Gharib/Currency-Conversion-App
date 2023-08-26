@@ -3,7 +3,9 @@
 }
 
 .toggle-btn{
-  @apply flex w-[239.088px]  h-[81.047px]  p-space-13 justify-center items-center gap-[16.113px] rounded-radius31 bg-[transparent] transition-all;
+  @apply flex w-[239.088px]  h-[81.047px]  p-space-13 justify-center items-center gap-[16.113px] 
+          text-size20
+          rounded-radius31 bg-[transparent] transition-all;
 }
 .toggle-btn-active {
   @apply bg-white;

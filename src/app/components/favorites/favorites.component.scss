@@ -1,0 +1,55 @@
+:host {
+  @apply fixed inset-0 z-20 bg-[linear-gradient(180deg,rgba(13,13,13,0.90)_0%,rgba(217,217,217,0.00)_100%)] flex items-start justify-end pt-[256.01px] pr-[371px];
+}
+.fav-card {
+  @apply w-[468.575px] h-[770.701px] rounded-[29.612px] relative bg-white;
+}
+.close-btn {
+  @apply w-[71.223px] h-[71.223px] rounded-[50%] absolute top-[-2rem] right-7 flex justify-center items-center bg-white;
+}
+
+.fav-card-elements {
+  @apply flex flex-col items-start gap-[21.558px] pt-[40.1px] px-[14.1px] w-full h-full overflow-auto; // review padding here
+}
+.card-title {
+  @apply text-[#121212] font-["Montserrat"] text-[24.253px] font-medium not-italic leading-[32.338px];
+}
+.favs {
+  @apply inline-flex flex-col items-start gap-[22.82px];
+}
+.fav-currency-block {
+  @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
+}
+.currency-logo-info {
+  @apply flex justify-between gap-[22.82px];
+}
+.currency-logo {
+  @apply w-[74.781px] h-[74.781px];
+}
+.fav-currency-title {
+  @apply text-[#121212] font-['Montserrat'] text-[18.864px] font-normal not-italic leading-[32.338px];
+}
+.fav-currency-label {
+  @apply text-[#b8b8b8] font-['Montserrat'] text-[16.169px] font-normal not-italic leading-[26.948px];
+}
+
+.custom-checkbox {
+  display: inline-block;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../../../assets/icons/Ellipse6.svg");
+  background-size: cover;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label {
+  background-image: url("../../../assets/icons/Group.svg");
+}

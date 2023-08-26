@@ -11,6 +11,8 @@ import { CurrencyCardComponent } from './components/currency-card/currency-card.
 import { ToggleBtnsComponent } from './components/toggle-btns/toggle-btns.component';
 import { DropdwonComponent } from './components/dropdwon/dropdwon.component';
 import { FormsModule } from '@angular/forms';
+import { LiveRatesComponent } from './components/live-rates/live-rates.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 // import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
       CustomInputComponent,
       CurrencyCardComponent, 
       ToggleBtnsComponent, 
-      DropdwonComponent
+      DropdwonComponent,
+      LiveRatesComponent,
+      FavoritesComponent,
     ],
   imports: [BrowserModule,
       AppRoutingModule,

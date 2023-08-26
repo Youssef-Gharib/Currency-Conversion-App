@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AppService } from './app.service';
 import { ICurrencies } from './icurrencies';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,8 +9,6 @@ import { ICurrencies } from './icurrencies';
 })
 export class AppComponent {
   title = 'Final-Project';
-  
-
 
   // currencies!: ICurrencies[];
   // constructor(private service: AppService) {}

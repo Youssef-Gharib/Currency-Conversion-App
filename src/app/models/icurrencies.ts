@@ -12,19 +12,28 @@ export interface ICurrencies {
   conversion_rates: IConversionRates;
 }
 
+export interface Currency {
+  id: number;
+  currencyCode: string;
+  flagUrl: string;
+}
+export interface CurrencyResponse {
+  currencyList: Currency[];
+}
+
 export interface ICurrency {
-  code: string,
-  flagUrl?: string,
-  desc: string
+  code: string;
+  flagUrl?: string;
+  desc: string;
 }
 
 export interface ICurrencyConvert {
-  from: string,
-  to: string,
-  amount: number
+  from: string;
+  to: string;
+  amount: number;
 }
 
 export interface IConvertResponse {
-  result: number,
-  time_last_update_utc: string
+  result: number;
+  time_last_update_utc: string;
 }

@@ -14,38 +14,49 @@
 
     <!-- <div *ngFor="let currency in currencies "> -->
 
-    <!-- <div class="fav-currency-block">
-      <div class="currency-logo-info">
-        <div class="currency-logo">
-          <img src="../../../assets/images/united-states-of-america1.svg" />
+    <div
+      *ngFor="let currency of currencies; let i = index"
+      class="block-wrapper"
+    >
+      <!-- <div class="fav-currency-block">
+        <div class="currency-logo-info">
+          <div class="currency-logo">
+            <img src="{{ currency.flagUrl }}" />
+          </div>
+          <div class="currency-info">
+            <p class="fav-currency-title">{{ currency.currencyCode }}</p>
+            <p class="fav-currency-label">CURRENCY</p>
+          </div>
         </div>
-        <div class="currency-info">
-          <p class="fav-currency-title">USD</p>
-          <p class="fav-currency-label">CURRENCY</p>
+        <div class="custom-checkbox">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="{{ i }}"
+            class="checkbox-item"
+          />
+          <label for="{{ i }}" class="checkbox-label"></label>
+        </div> -->
+
+      <app-currency-block class="block" [currency]="currency">
+        <div class="custom-checkbox">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="{{ i }}"
+            class="checkbox-item"
+            (change)="filterCurrencies()"
+          />
+          <label for="{{ i }}" class="checkbox-label"></label>
         </div>
-      </div>
-      <div class="custom-checkbox">
-        <input
-          type="checkbox"
-          name="checkbox"
-          id="checkbox-0"
-          class="checkbox-item"
-        />
-        <label for="checkbox-0" class="checkbox-label"></label>
-      </div>
+      </app-currency-block>
+
+      <!-- </div> -->
+
+      <!--
     </div> -->
-    <app-currency-block class="block">
-      <div class="custom-checkbox">
-        <input
-          type="checkbox"
-          name="checkbox"
-          id="checkbox-0"
-          class="checkbox-item"
-        />
-        <label for="checkbox-0" class="checkbox-label"></label>
-      </div>
-    </app-currency-block>
-    <!-- <app-currency-block class="block">
+
+      <!-- <app-currency-block class="block">
       <div class="custom-checkbox">
         <input
           type="checkbox"
@@ -57,11 +68,12 @@
       </div>
     </app-currency-block> -->
 
-    <!-- end of blocks container -->
+      <!-- end of blocks container -->
 
-    <!-- </div> end of fav-currency-block -->
+      <!-- </div> end of fav-currency-block -->
+    </div>
+    <!-- fav-card-elements -->
   </div>
-  <!-- fav-card-elements -->
+  <!--fav-card-container -->
+  <!-- </div> -->
 </div>
-<!--fav-card-container -->
-<!-- </div> -->

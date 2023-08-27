@@ -23,15 +23,21 @@
 .currency-block {
   @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
 }
+.block-wrapper {
+  @apply w-full;
+}
+// img {
+//   @apply w-[74.781px] h-[74.781px] rounded-[50%];
+// }
 .block {
   @apply w-full;
 }
 .currency-logo-info {
   @apply flex justify-between gap-[22.82px];
 }
-.currency-info {
-  @apply flex justify-between gap-[22.82px];
-} //bring back when using component
+// .currency-info {
+//   @apply flex justify-between gap-[22.82px];
+// } //bring back when using component
 .currency-logo {
   @apply w-[74.781px] h-[74.781px];
 } // old

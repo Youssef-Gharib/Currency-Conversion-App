@@ -13,7 +13,9 @@
 .body-head {
   @apply flex justify-between;
 }
-
+img {
+  @apply w-[74.781px] h-[74.781px] rounded-[50%];
+}
 .live-exchange-rates-title {
   @apply text-[#202020] font-['Montserrat'] text-[34.402px] not-italic font-semibold;
 }

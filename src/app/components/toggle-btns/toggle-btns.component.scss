@@ -1,9 +1,9 @@
 :host {
-  @apply flex w-[473px] h-[95.23px] gap-[38px] p-space-15 justify-center items-center  rounded-[45px] bg-[#F0F0F0];
+  @apply flex w-full h-[95.23px] gap-[38px] p-space-15 justify-center items-center  rounded-[45px] bg-[#F0F0F0];
 }
 
 .toggle-btn{
-  @apply flex w-[204px]  h-[70px]  p-space-13 justify-center items-center gap-[16.113px] 
+  @apply flex w-[50%]  h-[70px]  p-space-13 justify-center items-center gap-[16.113px] 
           text-size20
           rounded-radius31 bg-[transparent] transition-all;
 }

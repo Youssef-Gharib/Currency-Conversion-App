@@ -50,3 +50,7 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.p-dropdown{
+  @apply border-0 outline-none
+}

@@ -9,6 +9,7 @@ import { AppService } from 'src/app/services/app.service';
 
 })
 export class ConvertComponent {
+  loading = false;
   selectedCurrency: ICurrency = {
     "id": 11,
     "currencyCode": "EGP",
@@ -21,6 +22,7 @@ export class ConvertComponent {
   constructor(private appService: AppService) { }
 
   submit() {
+    this.loading = true;
     let data: ICurrencyConvert = {
       from: this.currencyFrom.currencyCode,
       to: this.currencyTo.currencyCode,
@@ -30,6 +32,7 @@ export class ConvertComponent {
     this.appService.convert(data).subscribe({
       next: (res) => {
         this.result = res.result;
+        this.loading = false;
       }
     })
   }

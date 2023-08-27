@@ -21,5 +21,6 @@
       <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly>
     </div>
   </div>
-  <button (click)="submit()" class="btn blue-btn mt-10">Convert</button>
+  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10"><p-progressSpinner *ngIf="loading"></p-progressSpinner> Convert</button>
 </main>
+

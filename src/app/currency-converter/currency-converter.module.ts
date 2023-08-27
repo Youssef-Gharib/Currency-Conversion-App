@@ -7,6 +7,7 @@ import { ConvertComponent } from './convert/convert.component';
 import { CompareComponent } from './compare/compare.component';
 import { ComponentsModule } from '../components/components.module';
 import { FormsModule } from '@angular/forms';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     CurrencyConverterRoutingModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    ProgressSpinnerModule
   ]
 })
 export class CurrencyConverterModule { }

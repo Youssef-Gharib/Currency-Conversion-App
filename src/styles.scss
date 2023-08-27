@@ -28,14 +28,20 @@
   }
 
   //add fav button
-  .fav-btn{
-  
+  .dis-element{
+      @apply flex  justify-between    ;
   }
 
-  // close button
-  .colse-btn{
-
+  .amount-input{
+    @apply  w-space-222 h-space-70 text-black text-size23 font-semibold rounded-radius31 outline-none p-[20px] border border-black-300
   }
+  .div-input{
+    @apply  flex flex-col gap-6 justify-between;
+  }
+  .card-parent{
+    @apply  flex flex-col gap-10 justify-between w-full;
+  }
+
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -23,7 +23,7 @@ export class ConvertComponent {
     let data: ICurrencyConvert = {
       from: this.currencyFrom.code,
       to: this.currencyTo.code,
-      amount: 100
+      amount: 1
     }
 
     this.appService.convert(data).subscribe({

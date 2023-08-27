@@ -1,13 +1,26 @@
-<div class="flex items-center">
-  <custom-input></custom-input>
-  <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
-</div>
-<div class="flex items-center">
-  <div class="flex flex-col justify-between  gap-6">
-    <label for="" class="text-white text-size20 font-semibold">Amount</label>
-    <input type="text" name="result" [(ngModel)]="result" class="amount-input">
-  </div>
-  <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
-</div>
 
-<button (click)="submit()" class="btn blue-btn">Convert</button>
+  <main class="card-parent">
+    <div class="dis-element">
+      <div class="div-input">
+        <label for="" class="text-white text-size20 font-semibold">Amount</label>
+        <input type="text" name="result"  class="amount-input">
+      </div>
+        
+      <div class="div-input">
+        <label for="" class="text-white text-size20 font-semibold">From</label>
+        <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
+      </div>
+    </div>
+    <div class="dis-element">
+      <div class="div-input">
+        <label for="" class="text-white text-size20 font-semibold">To</label>
+        <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
+      </div>
+        
+      <div class="div-input">
+        <label for="" class="text-white text-size20 font-semibold">Amount</label>
+        <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
+      </div>
+    </div>
+    <button (click)="submit()" class="btn blue-btn mt-10">Convert</button>
+  </main>

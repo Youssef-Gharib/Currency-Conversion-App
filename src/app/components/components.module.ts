@@ -4,9 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { ToggleBtnsComponent } from './toggle-btns/toggle-btns.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { CurrencyBlockComponent } from './currency-block/currency-block.component';
 
 @NgModule({
+
   declarations: [
     ToggleBtnsComponent,
     DropdownComponent
@@ -21,5 +22,6 @@ import { DropdownModule } from 'primeng/dropdown';
     ToggleBtnsComponent,
     DropdownComponent
   ]
+
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

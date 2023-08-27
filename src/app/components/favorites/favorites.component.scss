@@ -19,17 +19,35 @@
 }
 .fav-currency-block {
   @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
+} //old
+.currency-block {
+  @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
+}
+.block {
+  @apply w-full;
 }
 .currency-logo-info {
   @apply flex justify-between gap-[22.82px];
 }
+.currency-info {
+  @apply flex justify-between gap-[22.82px];
+} //bring back when using component
 .currency-logo {
   @apply w-[74.781px] h-[74.781px];
-}
+} // old
+.currency-logo-holder {
+  @apply w-[74.781px] h-[74.781px];
+} //use when using component
 .fav-currency-title {
+  @apply text-[#121212] font-['Montserrat'] text-[18.864px] font-normal not-italic leading-[32.338px];
+} //old
+.currency-name-text {
   @apply text-[#121212] font-['Montserrat'] text-[18.864px] font-normal not-italic leading-[32.338px];
 }
 .fav-currency-label {
+  @apply text-[#b8b8b8] font-['Montserrat'] text-[16.169px] font-normal not-italic leading-[26.948px];
+} //old
+.currency-label {
   @apply text-[#b8b8b8] font-['Montserrat'] text-[16.169px] font-normal not-italic leading-[26.948px];
 }
 

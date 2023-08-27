@@ -13,7 +13,8 @@
     </div>
 
     <!-- <div *ngFor="let currency in currencies "> -->
-    <div class="fav-currency-block">
+
+    <!-- <div class="fav-currency-block">
       <div class="currency-logo-info">
         <div class="currency-logo">
           <img src="../../../assets/images/united-states-of-america1.svg" />
@@ -32,7 +33,30 @@
         />
         <label for="checkbox-0" class="checkbox-label"></label>
       </div>
-    </div>
+    </div> -->
+    <app-currency-block class="block">
+      <div class="custom-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox-0"
+          class="checkbox-item"
+        />
+        <label for="checkbox-0" class="checkbox-label"></label>
+      </div>
+    </app-currency-block>
+    <!-- <app-currency-block class="block">
+      <div class="custom-checkbox">
+        <input
+          type="checkbox"
+          name="checkbox"
+          id="checkbox-0"
+          class="checkbox-item"
+        />
+        <label for="checkbox-0" class="checkbox-label"></label>
+      </div>
+    </app-currency-block> -->
+
     <!-- end of blocks container -->
 
     <!-- </div> end of fav-currency-block -->

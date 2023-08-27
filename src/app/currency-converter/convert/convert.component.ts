@@ -9,10 +9,11 @@ import { AppService } from 'src/app/services/app.service';
 
 })
 export class ConvertComponent {
-  selectedCurrency: ICurrency = {
-    code: 'EGP',
-    desc: 'Egyptian Pound'
-  };
+  selectedCurrency: ICurrency =  {
+    "id": 11,
+    "currencyCode": "EGP",
+    "flagUrl": "https://flagcdn.com/h60/eg.png"
+};
 
   currencyFrom!: ICurrency;
   currencyTo!: ICurrency;
@@ -21,8 +22,8 @@ export class ConvertComponent {
 
   submit() {
     let data: ICurrencyConvert = {
-      from: this.currencyFrom.code,
-      to: this.currencyTo.code,
+      from: this.currencyFrom.currencyCode,
+      to: this.currencyTo.currencyCode,
       amount: 1
     }
 

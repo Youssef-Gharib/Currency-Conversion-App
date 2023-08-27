@@ -1,4 +1,4 @@
-import { IConversionRates } from './iconversion-rates';
+
 
 export interface ICurrencies {
   result: string;
@@ -9,13 +9,12 @@ export interface ICurrencies {
   time_next_update_unix: number;
   time_next_update_utc: string;
   base_code: string;
-  conversion_rates: IConversionRates;
 }
 
 export interface ICurrency {
-  code: string,
+  id: number,
   flagUrl?: string,
-  desc: string
+  currencyCode: string
 }
 
 export interface ICurrencyConvert {

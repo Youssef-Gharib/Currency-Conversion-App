@@ -3,7 +3,7 @@
     <div class="dis-element">
       <div class="div-input">
         <label for="" class="text-white text-size20 font-semibold">Amount</label>
-        <input type="text" name="result"  class="amount-input">
+        <input type="text" name="result"  class="amount-input" [defaultChecked]="2">
       </div>
         
       <div class="div-input">
@@ -22,5 +22,5 @@
         <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
       </div>
     </div>
-    <button (click)="submit()" class="btn blue-btn mt-10">Convert</button>
+    <button (click)="submit()" class="btn blue-btn mt-10" >Convert</button>
   </main>

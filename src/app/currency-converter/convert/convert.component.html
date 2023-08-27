@@ -1,26 +1,25 @@
+<main class="card-parent">
+  <div class="dis-element">
+    <div class="div-input">
+      <label for="" class="text-white text-size20 font-semibold">Amount</label>
+      <input type="text" name="amount" class="amount-input" [(ngModel)]="amount">
+    </div>
 
-  <main class="card-parent">
-    <div class="dis-element">
-      <div class="div-input">
-        <label for="" class="text-white text-size20 font-semibold">Amount</label>
-        <input type="text" name="result"  class="amount-input" [defaultChecked]="2">
-      </div>
-        
-      <div class="div-input">
-        <label for="" class="text-white text-size20 font-semibold">From</label>
-        <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
-      </div>
+    <div class="div-input">
+      <label for="" class="text-white text-size20 font-semibold">From</label>
+      <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
     </div>
-    <div class="dis-element">
-      <div class="div-input">
-        <label for="" class="text-white text-size20 font-semibold">To</label>
-        <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
-      </div>
-        
-      <div class="div-input">
-        <label for="" class="text-white text-size20 font-semibold">Amount</label>
-        <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
-      </div>
+  </div>
+  <div class="dis-element">
+    <div class="div-input">
+      <label for="" class="text-white text-size20 font-semibold">To</label>
+      <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
     </div>
-    <button (click)="submit()" class="btn blue-btn mt-10" >Convert</button>
-  </main>
+
+    <div class="div-input">
+      <label for="" class="text-white text-size20 font-semibold">Amount</label>
+      <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly>
+    </div>
+  </div>
+  <button (click)="submit()" class="btn blue-btn mt-10">Convert</button>
+</main>

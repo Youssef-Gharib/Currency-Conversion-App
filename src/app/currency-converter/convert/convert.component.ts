@@ -9,22 +9,22 @@ import { AppService } from 'src/app/services/app.service';
 
 })
 export class ConvertComponent {
-  selectedCurrency: ICurrency =  {
+  selectedCurrency: ICurrency = {
     "id": 11,
     "currencyCode": "EGP",
     "flagUrl": "https://flagcdn.com/h60/eg.png"
-};
-
-  currencyFrom!: ICurrency;
-  currencyTo!: ICurrency;
-  result!: number;
+  };
+  amount: number = 1;
+  currencyFrom: ICurrency = this.selectedCurrency;
+  currencyTo: ICurrency = this.selectedCurrency;
+  result: number = 1;
   constructor(private appService: AppService) { }
 
   submit() {
     let data: ICurrencyConvert = {
       from: this.currencyFrom.currencyCode,
       to: this.currencyTo.currencyCode,
-      amount: 1
+      amount: this.amount
     }
 
     this.appService.convert(data).subscribe({

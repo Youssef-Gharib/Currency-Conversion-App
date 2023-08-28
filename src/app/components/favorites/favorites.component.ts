@@ -23,6 +23,7 @@ export class FavoritesComponent {
   ngOnInit() {
     const storedSelectedCurrencies = this.currencyService.getFavCurrencies();
     this.selectedCurrencyCodes = storedSelectedCurrencies;
+    this.currencyService.setSelectedCurrencies(storedSelectedCurrencies);
     this.currencyService.triggerReloadCurrencies();
 
     console.log('FAV CURRENCIES ' + this.selectedCurrencyCodes);
@@ -35,6 +36,7 @@ export class FavoritesComponent {
       });
       this.currencyService.setCurrencies(res);
       this.currencyService.currenciesDataFetched.next(true);
+      this.favCurrencies = storedSelectedCurrencies;
       this.selectedCurrencyCodes.forEach((currencyCode: any) => {
         const currency = this.currencies.find(
           (c) => c.currencyCode === currencyCode

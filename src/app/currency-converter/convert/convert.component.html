@@ -2,25 +2,43 @@
   <div class="dis-element">
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">Amount</label>
-      <input type="text" name="amount" class="amount-input" [(ngModel)]="amount">
+      <input
+        type="text"
+        name="amount"
+        class="amount-input"
+        [(ngModel)]="amount"
+      />
     </div>
 
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">From</label>
-      <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
+      <app-dropdown
+        [selectedCurrency]="selectedCurrency"
+        (getSelectedCurrency)="currencyFrom = $event"
+      ></app-dropdown>
     </div>
   </div>
   <div class="dis-element">
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">To</label>
-      <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
+      <app-dropdown
+        [selectedCurrency]="selectedCurrency"
+        (getSelectedCurrency)="currencyTo = $event"
+      ></app-dropdown>
     </div>
 
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">Amount</label>
-      <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly>
+      <input
+        class="amount-input"
+        type="text"
+        name="result"
+        [(ngModel)]="result"
+        readonly
+      />
     </div>
   </div>
-  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10"><p-progressSpinner *ngIf="loading"></p-progressSpinner> Convert</button>
+  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10">
+    <p-progressSpinner *ngIf="loading"></p-progressSpinner> Convert
+  </button>
 </main>
-

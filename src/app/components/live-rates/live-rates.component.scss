@@ -8,14 +8,20 @@
   @apply w-[307px] h-[68.489px] shrink-0 ml-[7.7%]; //check margin here
 }
 .body-container {
-  @apply w-[1190.331px] h-[568.055px] mt-[10%] mr-[8.9%] mb-[16.5%] ml-[8.5%]; //check width and height
+  @media (max-width: 768px) {
+    @apply flex flex-col items-center;
+  }
+  @apply mt-[10%] mr-[8.9%] mb-[16.5%] ml-[8.5%]; //check width and height
 }
 .body-head {
   @apply flex justify-between;
 }
 
 .live-exchange-rates-title {
-  @apply text-[#202020] font-['Montserrat'] text-[34.402px] not-italic font-semibold;
+  @media (max-width: 768px) {
+    @apply text-[#202020] font-['Montserrat'] text-[28px] not-italic font-semibold;
+  }
+  @apply text-[#202020] font-['Montserrat'] text-[32.5px] not-italic font-semibold;
 }
 .fav-btn-holder {
   @apply flex w-[331px] h-[74px] flex-col justify-center items-center gap-[18.926px] shrink-0 rounded-[37.852px] border-[1.893px] border-solid border-[#000] cursor-pointer ease-in-out duration-300 hover:bg-[#efefef];

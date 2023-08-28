@@ -1,4 +1,4 @@
-<button class="toggle-btn" *ngFor="let e of toggleData" [ngClass]="{'toggle-btn-active':activeBtn == e.status}"
-    (click)=" setActiveBtn(e.status)">
-    {{e.title}}
+<button class="toggle-btn" *ngFor="let e of toggleData;let i = index" (click)=" setActiveBtn(i, e.status)">
+    <span>{{e.title}}</span>
 </button>
+<div #selectedBG class="selected-bg"></div>

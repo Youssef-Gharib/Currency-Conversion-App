@@ -19,7 +19,7 @@ export class AppService {
   }
 
   convert(data: ICurrencyConvert): Observable<IConvertResponse> {
-    return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/currency/convert/{source}/{target}/{amount}?source=${data.from}&target=${data.to}&amount=${data.amount}`, data);
+    return this.http.post<IConvertResponse>(`${this.baseURL}/v1/currency/convert/{source}/{target}/{amount}?source=${data.from}&target=${data.to}&amount=${data.amount}`, data);
     // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
   }
 

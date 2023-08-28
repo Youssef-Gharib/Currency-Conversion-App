@@ -23,7 +23,14 @@ export interface ICurrencyConvert {
   amount: number;
 }
 
+export interface ICompare{
+  baseCarrenceyId: number;
+  targetCurrencyIds:[];
+  amount: number;
+
+}
+
 export interface IConvertResponse {
-  result: number;
+  conversion_result: number;
   time_last_update_utc: string;
 }

@@ -35,7 +35,7 @@ export class LiveRatesComponent implements OnInit {
                 currency.rate = response.result;
               });
           } else {
-            currency.rate = 1; // The rate for the same currency is 1
+            currency.rate = 1;
           }
         });
       }
@@ -68,7 +68,6 @@ export class LiveRatesComponent implements OnInit {
         }
       });
     }
-
     if (this.currencies) {
       this.currencies.forEach((currency: any) => {
         if (this.selectedCurrencies.includes(currency.currencyCode)) {
@@ -85,7 +84,6 @@ export class LiveRatesComponent implements OnInit {
         }
       });
     }
-
     console.log(
       'SELECTED CURRENCIES IN LIVE RATES: ' + this.selectedCurrencies
     );
@@ -98,22 +96,20 @@ export class LiveRatesComponent implements OnInit {
             const currencyData =
               this.currencyService.getCurrencyDataFromSelected(currencyCode);
             if (currencyData) {
-              // this.currencyCode = currencyData.currencyCode;
-              // this.currencyFlagUrl = currencyData.flagUrl;
               console.log('ID:' + currencyData.id);
               console.log('CODE:' + currencyData.currencyCode);
               console.log('FLAG:' + currencyData.flagUrl);
+              console.log('RATE:' + currencyData.rate);
               return {
                 id: currencyData.id,
                 currencyCode: currencyData.currencyCode,
                 flagUrl: currencyData.flagUrl,
+                rate: currencyData.rate,
               };
             }
             return null;
           })
           .filter((currencyData) => currencyData !== null) as ICurrency[];
-
-        // console.log(this.selectedCurrencies + 'selected currencies');
       });
     this.currenciesArray = this.currencyService.getCurrenciesArray();
     console.log(this.currenciesArray + 'currenciesArray in Live Rates');
@@ -131,6 +127,7 @@ export class LiveRatesComponent implements OnInit {
           })
           .filter((currency) => currency != undefined) as ICurrency[];
       }
+      console.log(this.currencyDataArray + 'CURRENCIES SELECTED AT BEGINING');
     });
   }
 }

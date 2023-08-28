@@ -25,8 +25,6 @@
       <div class="title">
         <span class="portofolio-title">My Portofolio</span>
       </div>
-      <!-- use ng for here -->
-      <!-- <div *ngFor="let currency; in: currencies"> -->
 
       <div *ngFor="let currency of currencyDataArray">
         <div class="currency-block">
@@ -45,7 +43,7 @@
           </div>
 
           <div class="currency-value">
-            <span class="rate-value">1.00</span>
+            <span class="rate-value">{{ currency.rate }}</span>
           </div>
         </div>
       </div>

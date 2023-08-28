@@ -46,7 +46,7 @@ export class AppService {
 
   convert(data: ICurrencyConvert): Observable<IConvertResponse> {
     return this.http.post<IConvertResponse>(
-      `${this.baseURL2}/v1/currency/convert/{source}/{target}/{amount}?source=${data.from}&target=${data.to}&amount=${data.amount}`,
+      `${this.baseURL}/v1/currency/convert/{data.from}/{data.to}/{data.amount}`,
       data
     );
     // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
@@ -55,8 +55,7 @@ export class AppService {
     return this.currenciesSubject.asObservable();
   }
   getFavCurrencies() {
-    const storedCurrencies = localStorage.getItem('selectedCurrencies');
-    return storedCurrencies ? JSON.parse(storedCurrencies) : [];
+    return JSON.parse(localStorage.getItem('selectedCurrencies') || '[]');
   }
   getSelectedCurrenciesObservable(): Observable<string[]> {
     return this.selectedCurrenciesSubject.asObservable();

@@ -17,15 +17,65 @@ export class LiveRatesComponent implements OnInit {
   currencyRate!: number;
   currencyFlagUrl!: string;
   constructor(private currencyService: AppService) {}
+  updateConversionRates(fromCurrencyCode: string) {
+    if (fromCurrencyCode) {
+      const fromCurrency = this.currencyDataArray.find(
+        (currency) => currency.currencyCode === fromCurrencyCode
+      );
+      if (fromCurrency) {
+        this.currencyDataArray.forEach((currency) => {
+          if (currency.currencyCode !== fromCurrency.currencyCode) {
+            this.currencyService
+              .convert({
+                from: fromCurrency.id,
+                to: currency.id,
+                amount: 1,
+              })
+              .subscribe((response) => {
+                currency.rate = response.result;
+              });
+          } else {
+            currency.rate = 1; // The rate for the same currency is 1
+          }
+        });
+      }
+    }
+  }
   ngOnInit(): void {
     const storedSelectedCurrencies = this.currencyService.getFavCurrencies();
     this.selectedCurrencies = storedSelectedCurrencies;
     this.currencyService.triggerReloadCurrencies();
+    const fromCurrencyCode = 'YOUR_SELECTED_FROM_CURRENCY_CODE';
+    const fromCurrency =
+      this.currencyService.getCurrencyDataFromSelected(fromCurrencyCode);
+
+    if (fromCurrency) {
+      this.currencyDataArray.forEach((currencyData) => {
+        const toCurrency = this.currencyService.getCurrencyDataFromSelected(
+          currencyData.currencyCode
+        );
+
+        if (toCurrency) {
+          this.currencyService
+            .convert({
+              from: fromCurrency.id,
+              to: toCurrency.id,
+              amount: 1,
+            })
+            .subscribe((response) => {
+              currencyData.rate = response.result;
+            });
+        }
+      });
+    }
 
     if (this.currencies) {
       this.currencies.forEach((currency: any) => {
         if (this.selectedCurrencies.includes(currency.currencyCode)) {
-          currency.checked = true;
+          // currency.checked = true;
+          currency.checked = this.selectedCurrencies.includes(
+            currency.currencyCode
+          );
           console.log(
             'Currency: LR',
             currency.currencyCode,
@@ -50,9 +100,11 @@ export class LiveRatesComponent implements OnInit {
             if (currencyData) {
               // this.currencyCode = currencyData.currencyCode;
               // this.currencyFlagUrl = currencyData.flagUrl;
+              console.log('ID:' + currencyData.id);
               console.log('CODE:' + currencyData.currencyCode);
               console.log('FLAG:' + currencyData.flagUrl);
               return {
+                id: currencyData.id,
                 currencyCode: currencyData.currencyCode,
                 flagUrl: currencyData.flagUrl,
               };
@@ -60,6 +112,7 @@ export class LiveRatesComponent implements OnInit {
             return null;
           })
           .filter((currencyData) => currencyData !== null) as ICurrency[];
+
         // console.log(this.selectedCurrencies + 'selected currencies');
       });
     this.currenciesArray = this.currencyService.getCurrenciesArray();

@@ -14,11 +14,12 @@ export interface ICurrency {
   flagUrl?: string;
   currencyCode: string;
   checked?: boolean;
+  rate?: number;
 }
 
 export interface ICurrencyConvert {
-  from: string;
-  to: string;
+  from: number;
+  to: number;
   amount: number;
 }
 

@@ -23,10 +23,12 @@ export class ConvertComponent {
   submit() {
     this.loading = true;
     let data: ICurrencyConvert = {
+
       from: this.currencyFrom.id,
       to: this.currencyTo.id,
       amount: this.amount,
     };
+
 
     this.appService.convert(data).subscribe({
       next: (res) => {

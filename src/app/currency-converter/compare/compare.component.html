@@ -2,7 +2,7 @@
   <div class="dis-element">
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">Amount</label>
-      <input type="text" name="result"  class="amount-input">
+      <input type="text" name="result"  class="amount-input" [(ngModel)]="amount">
     </div>
       
     <div class="div-input">
@@ -10,16 +10,19 @@
       <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyFrom = $event"></app-dropdown>
     </div>
   </div>
-  <div class="dis-element">
-    <div class="div-input">
-      <label for="" class="text-white text-size20 font-semibold">To</label>
-      <app-dropdown [selectedCurrency]="selectedCurrency" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
-    </div>
-      
-    <div class="div-input">
-      <label for="" class="text-white text-size20 font-semibold">Amount</label>
-      <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
-    </div>
+  <div class="target">
+      <div class="dis-element">
+        <div class="target-field div-input">
+          <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+          <app-dropdown [selectedCurrency]="selectedCurrency1" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
+          <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
+        </div>
+          
+        <div class="div-input target-field">
+          <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+          <app-dropdown [selectedCurrency]="selectedCurrency2" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
+          <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
+        </div>
+      </div>
   </div>
-  <button (click)="submit()" class="btn blue-btn mt-10">Compare</button>
-</main>
+  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10"><p-progressSpinner *ngIf="loading"></p-progressSpinner> Compare</button></main>

@@ -8,29 +8,55 @@ import { AppService } from 'src/app/services/app.service';
   styleUrls: ['./compare.component.scss'],
 })
 export class CompareComponent {
+  loading = false;
   selectedCurrency: ICurrency = {
-    id: 11,
-    currencyCode: 'EGP',
-    flagUrl: 'https://flagcdn.com/h60/eg.png',
-  };
 
+    "id": 11,
+    "currencyCode": "EGP",
+    "flagUrl": "https://flagcdn.com/h60/eg.png"
+  };
+  selectedCurrency1: ICurrency =  {
+    "id": 1,
+    "currencyCode": "USD",
+    "flagUrl": "https://flagcdn.com/h60/us.png"
+  };
+  selectedCurrency2: ICurrency = {
+    "id": 3,
+    "currencyCode": "GBP",
+    "flagUrl": "https://flagcdn.com/h60/gb.png"
+  };
+  amount: number= 1;
   currencyFrom!: ICurrency;
   currencyTo!: ICurrency;
-  result!: number;
-  constructor(private appService: AppService) {}
+  result: number=1;
+  constructor(private appService: AppService) { }
+  
+  
+
 
   submit() {
+    this.loading = true;
     let data: ICurrencyConvert = {
-      from: this.currencyFrom.id,
-      to: this.currencyTo.id,
-      amount: 1,
+
+      from: this.currencyFrom.currencyCode,
+      to: this.currencyTo.currencyCode,
+      amount: this.amount,
+    }
+
+     
     };
+
 
     this.appService.convert(data).subscribe({
       next: (res) => {
+        this.loading = false;
         this.result = res.result;
-      },
-    });
+
+     
+      }
+    })
+
+    
   }
 
   getSelected(e: ICurrency) {

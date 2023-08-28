@@ -17,13 +17,12 @@ export class ConvertComponent {
   amount: number = 1;
   currencyFrom: ICurrency = this.selectedCurrency;
   currencyTo: ICurrency = this.selectedCurrency;
-  result: number = 1;
+  conversion_result: number = 1;
   constructor(private appService: AppService) {}
 
   submit() {
     this.loading = true;
     let data: ICurrencyConvert = {
-
       from: this.currencyFrom.id,
       to: this.currencyTo.id,
       amount: this.amount,
@@ -32,7 +31,7 @@ export class ConvertComponent {
 
     this.appService.convert(data).subscribe({
       next: (res) => {
-        this.result = res.result;
+        this.conversion_result = res.conversion_result;
         this.loading = false;
       },
     });

@@ -32,7 +32,7 @@ export class LiveRatesComponent implements OnInit {
                 amount: 1,
               })
               .subscribe((response) => {
-                currency.rate = response.result;
+                currency.rate = response.conversion_result;
               });
           } else {
             currency.rate = 1;
@@ -63,7 +63,7 @@ export class LiveRatesComponent implements OnInit {
               amount: 1,
             })
             .subscribe((response) => {
-              currencyData.rate = response.result;
+              currencyData.rate = response.conversion_result;
             });
         }
       });

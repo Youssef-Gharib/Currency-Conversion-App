@@ -13,7 +13,6 @@ import { map } from 'rxjs';
 })
 export class AppService {
   baseURL = 'http://ec2-18-134-206-213.eu-west-2.compute.amazonaws.com/api';
-  baseURL2 = 'http://www.amrcurrencyconversion.site/api';
   currencies: ICurrency[] = [];
   selectedCurrencies: string[] = [];
   private selectedCurrenciesSubject = new BehaviorSubject<string[]>([]);
@@ -46,11 +45,18 @@ export class AppService {
 
   convert(data: ICurrencyConvert): Observable<IConvertResponse> {
     return this.http.post<IConvertResponse>(
-      `${this.baseURL}/v1/currency/convert/{data.from}/{data.to}/{data.amount}`,
+      `${this.baseURL}/v1/currency/convert/1/2/1`,
       data
     );
     // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
   }
+  // compare(data: ICurrencyConvert): Observable<IConvertResponse> {
+  //   return this.http.post<IConvertResponse>(
+  //     `${this.baseURL}/v1/currency/convert/{data.from}/{data.to}/{data.amount}`,
+  //     data
+  //   );
+  //   // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
+  // }
   getCurrenciesObservable(): Observable<ICurrency[]> {
     return this.currenciesSubject.asObservable();
   }

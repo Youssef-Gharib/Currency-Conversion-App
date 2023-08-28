@@ -19,9 +19,18 @@ export class AppService {
   private selectedCurrenciesSubject = new BehaviorSubject<string[]>([]);
   private currenciesSubject = new BehaviorSubject<ICurrency[]>([]);
   currenciesDataFetched = new BehaviorSubject<boolean>(false);
+  private reloadCurrenciesSubject = new BehaviorSubject<boolean>(true);
 
-  constructor(private http: HttpClient) {}
-
+  constructor(private http: HttpClient) {
+    this.reloadCurrenciesSubject.subscribe((reload) => {
+      if (reload) {
+        this.getCurrencies().subscribe();
+      }
+    });
+  }
+  triggerReloadCurrencies() {
+    this.reloadCurrenciesSubject.next(true);
+  }
   // renderCurrencies(): Observable<ICurrency[]> {
   //   return this.http.get<ICurrency[]>(`${this.baseURL}/v1/currency`);
   // }
@@ -46,7 +55,8 @@ export class AppService {
     return this.currenciesSubject.asObservable();
   }
   getFavCurrencies() {
-    return JSON.parse(localStorage.getItem('selectedCurrencies') || '[]');
+    const storedCurrencies = localStorage.getItem('selectedCurrencies');
+    return storedCurrencies ? JSON.parse(storedCurrencies) : [];
   }
   getSelectedCurrenciesObservable(): Observable<string[]> {
     return this.selectedCurrenciesSubject.asObservable();

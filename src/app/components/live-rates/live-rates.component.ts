@@ -18,6 +18,27 @@ export class LiveRatesComponent implements OnInit {
   currencyFlagUrl!: string;
   constructor(private currencyService: AppService) {}
   ngOnInit(): void {
+    const storedSelectedCurrencies = this.currencyService.getFavCurrencies();
+    this.selectedCurrencies = storedSelectedCurrencies;
+    this.currencyService.triggerReloadCurrencies();
+
+    if (this.currencies) {
+      this.currencies.forEach((currency: any) => {
+        if (this.selectedCurrencies.includes(currency.currencyCode)) {
+          currency.checked = true;
+          console.log(
+            'Currency: LR',
+            currency.currencyCode,
+            'Checked: LR',
+            currency.checked
+          );
+        }
+      });
+    }
+
+    console.log(
+      'SELECTED CURRENCIES IN LIVE RATES: ' + this.selectedCurrencies
+    );
     this.currencyService
       .getSelectedCurrenciesObservable()
       .subscribe((currencies) => {
@@ -41,8 +62,8 @@ export class LiveRatesComponent implements OnInit {
           .filter((currencyData) => currencyData !== null) as ICurrency[];
         // console.log(this.selectedCurrencies + 'selected currencies');
       });
-    // this.currenciesArray = this.currencyService.getCurrenciesArray();
-    // console.log(this.currenciesArray + 'currenciesArray in Live Rates');
+    this.currenciesArray = this.currencyService.getCurrenciesArray();
+    console.log(this.currenciesArray + 'currenciesArray in Live Rates');
     this.currencyService.currenciesDataFetched.subscribe((dataFetched) => {
       if (dataFetched) {
         this.currenciesArray = this.currencyService.getCurrenciesArray();

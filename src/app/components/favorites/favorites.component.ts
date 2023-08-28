@@ -13,36 +13,37 @@ export class FavoritesComponent {
   rate!: number;
   currencies!: ICurrency[];
   favCurrencies: string[] = [];
+  selectedCurrencyCodes: any;
   constructor(private currencyService: AppService) {}
   close() {
-    // this.close$.emit(true);
     setTimeout(() => {
       this.close$.emit(true);
     }, 1000);
   }
   ngOnInit() {
+    const storedSelectedCurrencies = this.currencyService.getFavCurrencies();
+    this.selectedCurrencyCodes = storedSelectedCurrencies;
+    this.currencyService.triggerReloadCurrencies();
+
+    console.log('FAV CURRENCIES ' + this.selectedCurrencyCodes);
     this.currencyService.getCurrencies().subscribe((res) => {
       this.currencies = res;
+      this.currencies.forEach((currency) => {
+        if (this.selectedCurrencyCodes.includes(currency.currencyCode)) {
+          currency.checked = true;
+        }
+      });
       this.currencyService.setCurrencies(res);
       this.currencyService.currenciesDataFetched.next(true);
+      this.selectedCurrencyCodes.forEach((currencyCode: any) => {
+        const currency = this.currencies.find(
+          (c) => c.currencyCode === currencyCode
+        );
+        if (currency) {
+          this.favCurrencies.push(currency.currencyCode);
+        }
+      });
     });
-
-    // console.log(this.currencies);
-    // this.currencies.forEach((currency) => {
-    //   console.log(currency.id);
-    //   console.log(currency.currencyCode);
-    //   console.log(currency.flagUrl);
-    // });
-
-    // this.currencyService.renderCurrencies().subscribe((res:any) => {
-    //   this.currencies = res.currency_list;
-    //   console.log(this.currencies);
-    //   this.currencies.forEach((currency) => {
-    //     console.log(currency.id);
-    //     console.log(currency.currencyCode);
-    //     console.log(currency.flagUrl);
-    //   });
-    // });
   }
   onCheckboxChange(selectedCurrency: ICurrency) {
     // if error change to any

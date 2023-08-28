@@ -9,12 +9,13 @@ import { AppService } from 'src/app/services/app.service';
   styleUrls: ['./compare.component.scss']
 })
 export class CompareComponent {
+  loading = false;
   selectedCurrency: ICurrency = {
     "id": 11,
     "currencyCode": "EGP",
     "flagUrl": "https://flagcdn.com/h60/eg.png"
 };
-
+  amount: number= 1;
   currencyFrom!: ICurrency;
   currencyTo!: ICurrency;
   result!: number;

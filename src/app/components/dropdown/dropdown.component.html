@@ -1,17 +1,16 @@
-<div class="bg-white p-5">
-    <p-dropdown [options]="appService.currencies" (onChange)="getSelectedCurrency.emit(selectedCurrency) " 
-    [(ngModel)]="selectedCurrency" optionLabel="currencyCode" [showClear]="false" placeholder="">
-    <ng-template pTemplate="selectedItem">
-        <div class="flex align-items-center gap-2" *ngIf="selectedCurrency">
-            <img [src]="selectedCurrency.flagUrl" [class]="'flag flag-' + selectedCurrency.currencyCode" style="width: 18px" />
-            <div>{{ selectedCurrency.currencyCode }}</div>
+
+  <p-dropdown  [options]="appService.currencies" (onChange)="getSelectedCurrency.emit(selectedCurrency) " 
+    [(ngModel)]="selectedCurrency" optionLabel="currencyCode" [showClear]="false" class="w-full" placeholder="">
+    <ng-template pTemplate="selectedItem" >
+        <div class="flex align-items-center gap-2 w-full pl-1" *ngIf="selectedCurrency">
+            <img [src]="selectedCurrency.flagUrl" [class]="'flag flag-' + selectedCurrency.currencyCode"  class="selected-flag"  />
+            <div class="selected-country">{{ selectedCurrency.currencyCode }}</div>
         </div>
     </ng-template>
-    <ng-template let-country pTemplate="item">
-        <div class="flex align-items-center gap-2">
-            <img [src]="country.flagUrl" [class]="'flag flag-' + country.currencyCode" style="width: 18px" />
-            <div>{{ country.currencyCode }}</div>
+    <ng-template let-country pTemplate="item" >
+        <div class="flex align-items-center gap-2 w-full pl-1">
+            <img [src]="country.flagUrl" class="selected-flag" [class]="'flag flag-' + country.currencyCode"/>
+            <div class="selected-country country-">{{ country.currencyCode }}</div>
         </div>
     </ng-template>
-</p-dropdown>
-</div>
+  </p-dropdown>

@@ -24,8 +24,8 @@ export class ConvertComponent {
   submit() {
     this.loading = true;
     let data: ICurrencyConvert = {
-      from: this.currencyFrom.currencyCode,
-      to: this.currencyTo.currencyCode,
+      from:1,
+      to: 2,
       amount: this.amount
     }
 

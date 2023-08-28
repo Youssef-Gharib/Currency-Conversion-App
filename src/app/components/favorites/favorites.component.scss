@@ -5,7 +5,7 @@
   @apply w-[468.575px] h-[770.701px] rounded-[29.612px] relative bg-white;
 }
 .close-btn {
-  @apply w-[71.223px] h-[71.223px] rounded-[50%] absolute top-[-2rem] right-7 flex justify-center items-center bg-white;
+  @apply w-[71.223px] h-[71.223px] rounded-[50%] absolute top-[-2.3rem] right-11 flex justify-center items-center bg-white;
 }
 
 .fav-card-elements {
@@ -18,25 +18,35 @@
   @apply inline-flex flex-col items-start gap-[22.82px];
 }
 .fav-currency-block {
-  @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
+  @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-3;
 } //old
 .currency-block {
   @apply w-full flex justify-between border-b-[1.347px] border-opacity-[0.2] border-[#b9c1d9] pb-7;
 }
+.block-wrapper {
+  @apply w-full;
+}
+
 .block {
   @apply w-full;
 }
 .currency-logo-info {
-  @apply flex justify-between gap-[22.82px];
+  @apply flex justify-between gap-5;
 }
-.currency-info {
-  @apply flex justify-between gap-[22.82px];
-} //bring back when using component
+// .currency-info {
+//   @apply flex justify-between gap-[22.82px];
+// } //bring back when using component
 .currency-logo {
   @apply w-[74.781px] h-[74.781px];
+  img {
+    @apply w-[64.675px] h-[64.675px] rounded-[50%];
+  }
 } // old
 .currency-logo-holder {
   @apply w-[74.781px] h-[74.781px];
+  img {
+    @apply w-[64.675px] h-[64.675px] rounded-[50%];
+  }
 } //use when using component
 .fav-currency-title {
   @apply text-[#121212] font-['Montserrat'] text-[18.864px] font-normal not-italic leading-[32.338px];

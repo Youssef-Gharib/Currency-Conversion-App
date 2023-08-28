@@ -4,8 +4,10 @@ import { ResolveFn } from '@angular/router';
 import { currenciesResolver } from './currencies.resolver';
 
 describe('currenciesResolver', () => {
-  const executeResolver: ResolveFn<boolean> = (...resolverParameters) => 
-      TestBed.runInInjectionContext(() => currenciesResolver(...resolverParameters));
+  const executeResolver: ResolveFn<boolean> = (...resolverParameters) =>
+    TestBed.runInInjectionContext(() =>
+      currenciesResolver(...resolverParameters)
+    );
 
   beforeEach(() => {
     TestBed.configureTestingModule({});

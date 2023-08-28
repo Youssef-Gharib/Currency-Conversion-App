@@ -45,11 +45,15 @@
 .currency-block {
   @apply shrink-0 flex justify-between items-start border-b-[1.757px] border-opacity-[0.2] border-[#b9c1d9] pb-6;
 }
+
 .currency-logo-info {
-  @apply flex justify-between;
+  @apply flex justify-between gap-5;
 }
 .currency-logo-holder {
-  @apply w-[97.525px] h-[97.525px] rounded-[50%];
+  @apply w-[64.675px] h-[64.675px] rounded-[50%];
+  img {
+    @apply w-[64.675px] h-[64.675px] rounded-[50%];
+  }
 }
 .rate-value {
   @apply text-[#121212] text-right font-["Montserrat"] text-[29.881px] not-italic font-medium leading-[39.841px];

@@ -1,7 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { IConvertResponse, ICurrencies, ICurrency, ICurrencyConvert } from '../models/icurrencies';
+import { BehaviorSubject, Observable } from 'rxjs';
+import {
+  IConvertResponse,
+  ICurrencies,
+  ICurrency,
+  ICurrencyConvert,
+} from '../models/icurrencies';
 import { map } from 'rxjs';
 @Injectable({
   providedIn: 'root',
@@ -10,29 +15,59 @@ export class AppService {
   baseURL = 'http://ec2-18-134-206-213.eu-west-2.compute.amazonaws.com/api';
   baseURL2 = 'http://www.amrcurrencyconversion.site/api';
   currencies: ICurrency[] = [];
+  selectedCurrencies: string[] = [];
+  private selectedCurrenciesSubject = new BehaviorSubject<string[]>([]);
+  private currenciesSubject = new BehaviorSubject<ICurrency[]>([]);
+  currenciesDataFetched = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
+  // renderCurrencies(): Observable<ICurrency[]> {
+  //   return this.http.get<ICurrency[]>(`${this.baseURL}/v1/currency`);
+  // }
 
   getCurrencies(): Observable<ICurrency[]> {
-    return this.http.get<ICurrency[]>(`${this.baseURL}/v1/currency`).pipe(map((res: any) => res.currency_list));
+    return this.http.get<ICurrency[]>(`${this.baseURL}/v1/currency`).pipe(
+      map((res: any) => {
+        this.currencies = res.currency_list;
+        return res.currency_list;
+      })
+    );
   }
 
   convert(data: ICurrencyConvert): Observable<IConvertResponse> {
-    return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/currency/convert/{source}/{target}/{amount}?source=${data.from}&target=${data.to}&amount=${data.amount}`, data);
+    return this.http.post<IConvertResponse>(
+      `${this.baseURL2}/v1/currency/convert/{source}/{target}/{amount}?source=${data.from}&target=${data.to}&amount=${data.amount}`,
+      data
+    );
     // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
   }
-
-  renderCurrency(): Observable<ICurrencies[]> {
-    return this.http.get<ICurrencies[]>(
-      'https://v6.exchangerate-api.com/v6/ecf10bab01b34bf0de9636e1/latest/USD'
+  getCurrenciesObservable(): Observable<ICurrency[]> {
+    return this.currenciesSubject.asObservable();
+  }
+  getFavCurrencies() {
+    return JSON.parse(localStorage.getItem('selectedCurrencies') || '[]');
+  }
+  getSelectedCurrenciesObservable(): Observable<string[]> {
+    return this.selectedCurrenciesSubject.asObservable();
+  }
+  setSelectedCurrencies(currencies: string[]) {
+    this.selectedCurrencies = currencies;
+    this.selectedCurrenciesSubject.next(currencies);
+  }
+  getSelectedCurrencies() {
+    console.log('getSelectedCurrenciesFetched ' + this.selectedCurrencies);
+    return this.selectedCurrencies;
+  }
+  setCurrencies(currencies: ICurrency[]) {
+    this.currencies = currencies;
+  }
+  getCurrenciesArray() {
+    return this.currencies;
+  }
+  getCurrencyDataFromSelected(currencyCode: string): ICurrency | undefined {
+    return this.currencies.find(
+      (currency) => currency.currencyCode === currencyCode
     );
   }
-
-  fetchCurrencyById(currencyId: string): Observable<ICurrencies> {
-    return this.http.get<ICurrencies>(
-      `https://dummyjson.com/products/${currencyId}`
-    );
-  }
-
 }

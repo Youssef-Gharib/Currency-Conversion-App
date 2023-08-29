@@ -5,14 +5,13 @@ import { ApiService } from 'src/app/services/api.service';
 @Component({
   selector: 'live-exchange-rates',
   templateUrl: './live-exchange-rates.component.html',
-  styleUrls: ['./live-exchange-rates.component.scss']
+  styleUrls: ['./live-exchange-rates.component.scss'],
 })
 export class LiveExchangeRatesComponent {
   currencies: ICurrency[] = [];
   portfolioCurrencies: ICurrency[] = [];
 
-  constructor(private apiService: ApiService) {
-  }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getCurrencies();
@@ -22,16 +21,16 @@ export class LiveExchangeRatesComponent {
     this.getMyPortfolio();
     this.apiService.getCurrencies().subscribe({
       next: (res) => {
-        res.forEach(c => {
-          this.portfolioCurrencies.forEach(el => {
+        res.forEach((c) => {
+          this.portfolioCurrencies.forEach((el) => {
             if (c.currencyCode === el.currencyCode) {
-              c.selected = el.selected
+              c.selected = el.selected;
             }
-          })
+          });
         });
         this.currencies = res;
-      }
-    })
+      },
+    });
   }
 
   getMyPortfolio() {
@@ -42,5 +41,4 @@ export class LiveExchangeRatesComponent {
     this.apiService.updatePortfolio(c);
     this.getMyPortfolio();
   }
-
 }

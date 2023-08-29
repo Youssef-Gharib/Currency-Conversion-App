@@ -1,0 +1,28 @@
+<div class="dropdown" [ngClass]="{ open: isDropdownOpen }">
+    <button #dropdownBtn class="add-button" (click)="toggleDropdown()">
+        <img width="30" src="assets/images/add-to-fav-ico.svg" />
+        <span>Add to Favorites</span>
+    </button>
+
+    <div class="dropdown-content" *ngIf="isDropdownOpen">
+        <button class="close-button" (click)="toggleDropdown()">
+            <img width="30" src="assets/images/close-ico.svg" alt="">
+        </button>
+        My Favorites
+        <ul class="currency-list" #dropdown>
+            <li *ngFor="let currency of currencies" (click)="onSelect(currency)">
+
+                <div class="w-14 h-14 overflow-hidden rounded-[100%] bg-cover bg-center me-4"
+                    [ngStyle]="{'background-image':'url('+currency.flagUrl+')'}"></div>
+
+                <div class="text-[19px]">
+                    <span>{{ currency.currencyCode }}</span>
+                    <div class="text-neutral-400">Currency</div>
+                </div>
+
+                <input type="checkbox" [(ngModel)]="currency.selected" />
+
+            </li>
+        </ul>
+    </div>
+</div>

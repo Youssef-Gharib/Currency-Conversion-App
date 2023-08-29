@@ -1,0 +1,7 @@
+.portfolio-list {
+    li {
+        &:last-child {
+            @apply border-0
+        }
+    }
+}

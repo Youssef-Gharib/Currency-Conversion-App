@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{html,ts}",
+    "./src/**/*.{html,ts}"
   ],
   theme: {
     colors:{
@@ -24,9 +24,6 @@ module.exports = {
     fontSize: {
       size23: '23.379px',
       size20: '20.456px' ,
-    },
-    fontFamily:{
-      Montserrat: 'Montserrat'
     },
     extend: {
       spacing: {

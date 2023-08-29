@@ -13,7 +13,7 @@ export interface ICurrency {
   id: number;
   flagUrl?: string;
   currencyCode: string;
-  checked?: boolean;
+  selected?: boolean;
   rate?: number;
 }
 
@@ -23,14 +23,17 @@ export interface ICurrencyConvert {
   amount: number;
 }
 
-export interface ICompare{
-  baseCarrenceyId: number;
-  targetCurrencyIds:[];
-  amount: number;
-
-}
-
 export interface IConvertResponse {
   conversion_result: number;
   time_last_update_utc: string;
+}
+
+export interface ICurrencyCompare {
+  baseCurrencyId: number,
+  targetCurrencyIds: number[],
+  amount: number
+}
+
+export interface ICompareResponse {
+  compare_result: number[]
 }

@@ -1,5 +1,5 @@
 
-<p-dropdown  [options]="appService.currencies" (onChange)="getSelectedCurrency.emit(selectedCurrency) " 
+<p-dropdown  [options]="apiService.currencies" (onChange)="getSelectedCurrency.emit(selectedCurrency) " 
 [(ngModel)]="selectedCurrency" optionLabel="currencyCode" [showClear]="false" class="w-full" placeholder="">
 <ng-template pTemplate="selectedItem" >
     <div class="flex align-items-center gap-2 w-full pl-1" *ngIf="selectedCurrency">

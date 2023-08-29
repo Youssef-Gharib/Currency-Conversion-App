@@ -1,0 +1,11 @@
+<div class="flex items-center pb-8">
+    <div class="w-[74px] h-[74px] overflow-hidden rounded-[100%] bg-cover bg-center me-3"
+        [ngStyle]="{'background-image':'url('+currency.flagUrl+')'}"></div>
+    <div class="ps-4">
+        <p class="text-2xl">{{currency.currencyCode}}</p>
+        <label class="text-neutral-300 text-xl">{{currency.currencyCode}}</label>
+    </div>
+    <div class="ms-auto text-3xl">
+        {{currency.rate}}
+    </div>
+</div>

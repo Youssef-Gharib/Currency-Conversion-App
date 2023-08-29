@@ -1,12 +1,12 @@
 import { ResolveFn } from '@angular/router';
-import { ICurrency } from '../models/icurrencies';
-import { AppService } from './app.service';
 import { inject } from '@angular/core';
 import { tap } from 'rxjs';
+import { ApiService } from './api.service';
+import { ICurrency } from '../models/currency.model';
 
 export const currenciesResolver: ResolveFn<ICurrency[]> =
-  (route, state, appService: AppService = inject(AppService)) => {
-    return appService.getCurrencies().pipe(tap((res => {
-      appService.currencies = res;
+  (route, state, apiService: ApiService = inject(ApiService)) => {
+    return apiService.getCurrencies().pipe(tap((res => {
+      apiService.currencies = res;
     })));
   };

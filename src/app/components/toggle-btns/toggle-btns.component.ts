@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IToggleDataModel } from 'src/app/models/toggle.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { IToggleDataModel } from 'src/app/models/toggle.model';
   styleUrls: ['./toggle-btns.component.scss']
 })
 export class ToggleBtnsComponent implements OnInit {
+  @ViewChild('selectedBG') selectedBG!: ElementRef<HTMLElement>
   @Input() toggleData: IToggleDataModel[] = [];
   @Input() activeBtn?: string;
 
@@ -18,8 +19,9 @@ export class ToggleBtnsComponent implements OnInit {
     }
   }
 
-  setActiveBtn(status: string) {
+  setActiveBtn(index: number, status: string) {
     this.activeBtn = status;
     this.setActive$.emit(status);
+    this.selectedBG.nativeElement.style.transform = `translateX(${index * 110}%)`;
   }
 }

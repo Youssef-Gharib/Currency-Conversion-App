@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ICurrency, ICurrencyConvert } from 'src/app/models/icurrencies';
 import { AppService } from 'src/app/services/app.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-compare',
@@ -13,6 +14,7 @@ export class CompareComponent {
     "id": 11,
     "currencyCode": "EGP",
     "flagUrl": "https://flagcdn.com/h60/eg.png"
+
   };
   selectedCurrency1: ICurrency =  {
     "id": 1,
@@ -24,10 +26,11 @@ export class CompareComponent {
     "currencyCode": "GBP",
     "flagUrl": "https://flagcdn.com/h60/gb.png"
   };
+  
 
   amount: number= 1;
-  currencyFrom!: ICurrency;
-  currencyTo!: ICurrency;
+  currencyFrom: ICurrency =this.selectedCurrency1;
+  currencyTo: ICurrency = this.selectedCurrency2;
   result: number=1;
   constructor(private appService: AppService) { }
   
@@ -40,10 +43,9 @@ export class CompareComponent {
       amount: this.amount,
     }
 
-    
-        this.appService.convert(data).subscribe({
+
+        this.appService.convert(data).pipe(finalize(()=>this.loading= false )).subscribe({
           next: (res) => {
-            this.loading = false;
             this.result = res.conversion_result;
           }
         })

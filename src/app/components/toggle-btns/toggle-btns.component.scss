@@ -1,12 +1,18 @@
 :host {
-  @apply flex w-full h-[95.23px] gap-[38px] p-space-15 justify-center items-center  rounded-[45px] bg-[#F0F0F0];
+  @apply flex w-full h-[95.23px] justify-center items-center rounded-[45px] bg-[#F0F0F0] relative;
 }
 
-.toggle-btn{
-  @apply flex w-[50%]  h-[70px]  p-space-13 justify-center items-center gap-[16.113px] 
-          text-size20
-          rounded-radius31 bg-[transparent] transition-all;
+.toggle-btn {
+  @apply flex w-[50%] h-[70px] justify-center items-center text-size20 bg-[transparent] transition-all;
+
+  span {
+    @apply z-10
+  }
 }
-.toggle-btn-active {
-  @apply bg-white;
+
+.selected-bg {
+  left: 15px;
+  pointer-events: none;
+  transition: transform 0.4s;
+  @apply w-[45%] h-[70px] bg-white rounded-radius31 absolute z-0 top-[13px] right-0 bottom-0;
 }

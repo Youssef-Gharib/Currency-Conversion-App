@@ -1,4 +1,4 @@
-<main class="card-parent">
+<main class="card-parent relative"> <p-progressSpinner *ngIf="loading"></p-progressSpinner> 
   <div class="dis-element">
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">Amount</label>
@@ -32,6 +32,6 @@
       <input class="amount-input" type="text" name="conversion_result" [(ngModel)]="conversion_result" readonly="readonly" >
     </div>
   </div>
-  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10"><p-progressSpinner *ngIf="loading"></p-progressSpinner>  Convert</button>
+  <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10">  Convert</button>
   </main>
 

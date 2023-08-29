@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ICurrency, ICurrencyConvert } from 'src/app/models/icurrencies';
 import { AppService } from 'src/app/services/app.service';
+import { finalize } from 'rxjs';
 
 @Component({
   selector: 'app-convert',
@@ -35,10 +36,9 @@ export class ConvertComponent {
       'FROM IN APP SERVICE ' + this.appService.getFromCurrency().currencyCode
     );
 
-    this.appService.convert(data).subscribe({
+    this.appService.convert(data).pipe(finalize(()=>this.loading= false )).subscribe({
       next: (res) => {
         this.conversion_result = res.conversion_result;
-        this.loading = false;
       },
     });
   }

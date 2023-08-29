@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Final-Project';
-
+  showLoader: boolean = true;
+  constructor(private service: ApiService) {
+    this.service.getCurrencies().subscribe((data: any) => {
+      this.showLoader = false;
+      this.service.showLoader = false;
+    });
+  }
 }

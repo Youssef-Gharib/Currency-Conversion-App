@@ -48,6 +48,7 @@ export class AppService {
       `${this.baseURL}/v1/currency/convert/1/2/1`,
       data
     );
+
     // return this.http.post<IConvertResponse>(`${this.baseURL2}/v1/conversion`, data);
   }
   // compare(data: ICurrencyConvert): Observable<IConvertResponse> {

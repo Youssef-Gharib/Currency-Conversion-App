@@ -1,7 +1,10 @@
 :host {
-  @apply fixed inset-0 z-20 bg-[linear-gradient(180deg,rgba(13,13,13,0.90)_0%,rgba(217,217,217,0.00)_100%)] flex items-start justify-end pt-[256.01px] pr-[371px];
+  @apply fixed inset-0 z-20 bg-[linear-gradient(180deg,rgba(13,13,13,0.90)_0%,rgba(217,217,217,0.00)_100%)] flex items-start justify-end pt-[60.01px] pr-[371px];
 }
 .fav-card {
+  @media (max-width: 768px) {
+    @apply w-[100%] h-[100%] rounded-[29.612px] relative bg-white;
+  }
   @apply w-[468.575px] h-[770.701px] rounded-[29.612px] relative bg-white;
 }
 .close-btn {

@@ -36,6 +36,9 @@
   @apply text-[#363636] font-["Poppins"] text-[22.711px] font-medium not-italic leading-none;
 }
 .portofolios-container {
+  @media (max-width: 768px) {
+    @apply grid grid-cols-1 mt-[48.87px] gap-[80px]; //remove margin-top and add padding and review gap
+  }
   @apply grid grid-cols-2 mt-[48.87px] gap-[80px]; //remove margin-top and add padding and review gap
 }
 .title {

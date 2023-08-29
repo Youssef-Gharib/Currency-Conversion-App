@@ -24,6 +24,10 @@ export class FavoritesComponent {
     const storedSelectedCurrencies = this.currencyService.getFavCurrencies();
     this.selectedCurrencyCodes = storedSelectedCurrencies;
     this.currencyService.setSelectedCurrencies(storedSelectedCurrencies);
+    console.log(
+      'SELECTED CURRENCIES IN SERVICE: ' +
+        this.currencyService.getFavCurrencies()
+    );
     this.currencyService.triggerReloadCurrencies();
 
     console.log('FAV CURRENCIES ' + this.selectedCurrencyCodes);

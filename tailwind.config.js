@@ -25,6 +25,9 @@ module.exports = {
       size23: '23.379px',
       size20: '20.456px' ,
     },
+    fontFamily:{
+      Montserrat: 'Montserrat'
+    },
     extend: {
       spacing: {
         "space-1.8": "1.893px",

@@ -1,21 +1,28 @@
 :host::ng-deep {
 
-  .p-dropdown {
+
+  .p-dropdown  {
       @apply w-space-222 h-space-70 rounded-radius31  flex justify-center items-center
             outline-none
   }
 
-  
+  .p-component{
+    @apply mt-2
+  }
 
 .selected-flag{
   @apply w-[40px] h-[30px]
+
+ 
   
 }
 .selected-country{
   @apply  text-size20 text-black-200; 
 }
 
+
 .option-flag{
   @apply w-[30px] h-[18px]
 }
+
 }

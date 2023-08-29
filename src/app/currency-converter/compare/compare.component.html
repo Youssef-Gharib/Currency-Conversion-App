@@ -14,12 +14,14 @@
       <div class="dis-element">
         <div class="target-field div-input">
           <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+
           <app-dropdown [selectedCurrency]="selectedCurrency1" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
           <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
         </div>
           
         <div class="div-input target-field">
           <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+
           <app-dropdown [selectedCurrency]="selectedCurrency2" (getSelectedCurrency)="currencyTo = $event"></app-dropdown>
           <input class="amount-input" type="text" name="result" [(ngModel)]="result" readonly="readonly"  >
         </div>

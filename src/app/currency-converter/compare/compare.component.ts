@@ -13,6 +13,7 @@ export class CompareComponent {
     "id": 11,
     "currencyCode": "EGP",
     "flagUrl": "https://flagcdn.com/h60/eg.png"
+
   };
   selectedCurrency1: ICurrency =  {
     "id": 1,

@@ -1,7 +1,7 @@
 <div class="dropdown" [ngClass]="{ open: isDropdownOpen }">
-    <button #dropdownBtn class="add-button" (click)="toggleDropdown()">
+    <button #dropdownBtn class="add-button border-[1.8px] flex justify-center items-center" (click)="toggleDropdown()">
         <img width="30" src="assets/images/add-to-fav-ico.svg" />
-        <span>Add to Favorites</span>
+        <span class="text-[22px]">Add to Favorites</span>
     </button>
 
     <div class="dropdown-content" *ngIf="isDropdownOpen">

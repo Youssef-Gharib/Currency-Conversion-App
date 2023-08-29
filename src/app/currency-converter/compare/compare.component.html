@@ -13,13 +13,13 @@
   <div class="target">
       <div class="dis-element">
         <div class="target-field div-input">
-          <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+          <label for="" class="text-white text-size20 font-semibold target-text">Targeted currency</label>
           <app-dropdown [selectedCurrency]="selectedCurrency1" (getSelectedCurrency)="currency1To = $event"></app-dropdown>
           <input class="amount-input" type="text" name="result1" [(ngModel)]="result1" readonly="readonly"  >
         </div>
           
         <div class="div-input target-field">
-          <label for="" class="text-white text-size20 font-semibold">Targeted currency</label>
+          <label for="" class="text-white text-size20 font-semibold target-text">Targeted currency</label>
           <app-dropdown [selectedCurrency]="selectedCurrency2" (getSelectedCurrency)="currency2To = $event"></app-dropdown>
           <input class="amount-input" type="text" name="result2" [(ngModel)]="result2" readonly="readonly"  >
         </div>

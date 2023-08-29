@@ -5,23 +5,11 @@ import { ToggleBtnsComponent } from './toggle-btns/toggle-btns.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { CurrencyBlockComponent } from './currency-block/currency-block.component';
+import { PageLoaderComponent } from './page-loader/page-loader.component';
 
 @NgModule({
-
-  declarations: [
-    ToggleBtnsComponent,
-    DropdownComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    DropdownModule,
-
-  ],
-  exports: [
-    ToggleBtnsComponent,
-    DropdownComponent
-  ]
-
+  declarations: [ToggleBtnsComponent, DropdownComponent, PageLoaderComponent],
+  imports: [CommonModule, FormsModule, DropdownModule],
+  exports: [ToggleBtnsComponent, DropdownComponent],
 })
 export class ComponentsModule {}

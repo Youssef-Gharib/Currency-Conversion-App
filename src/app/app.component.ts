@@ -9,16 +9,11 @@ import { ICurrencies } from './models/icurrencies';
 })
 export class AppComponent {
   title = 'Final-Project';
-
-  // currencies!: ICurrencies[];
-  // constructor(private service: AppService) {}
-  // ngOnInit() {
-  //   this.service.renderCurrency().subscribe((data: any) => {
-  //     this.currencies = data.conversion_rates;
-  //     console.log(data.conversion_rates);
-  //     for (let key in this.currencies) {
-  //       console.log(key + ': ' + this.currencies[key]);
-  //     }
-  //   });
-  // }
+  showLoader: boolean = true;
+  constructor(private service: AppService) {
+    this.service.getCurrencies().subscribe((data: any) => {
+      this.showLoader = false;
+      this.service.showLoader = false;
+    });
+  }
 }

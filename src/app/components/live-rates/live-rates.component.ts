@@ -12,7 +12,7 @@ export class LiveRatesComponent implements OnInit {
   currenciesArray: ICurrency[] = [];
   currencyDataArray: ICurrency[] = [];
   showFavorites = false;
-
+  favCurrencies: string[] = [];
   constructor(private currencyService: AppService) {}
 
   ngOnInit(): void {
@@ -20,6 +20,7 @@ export class LiveRatesComponent implements OnInit {
     console.log('CURRENCIES ARRAY:' + this.currenciesArray);
     this.currencyService.currenciesDataFetched.subscribe((dataFetched) => {
       if (dataFetched) {
+        // this.currencyService.showLoader = false;
         this.currenciesArray = this.currencyService.getCurrenciesArray();
         console.log('CURRENCIES ARRAY:' + this.currenciesArray);
         // this.currencyDataArray = this.selectedCurrencies
@@ -93,6 +94,7 @@ export class LiveRatesComponent implements OnInit {
     this.currencyService
       .getSelectedCurrenciesObservable()
       .subscribe((currencies) => {
+        console.log('CURRENCIES: ' + currencies); //emptyy
         this.selectedCurrencies = currencies;
         this.currencyDataArray = this.selectedCurrencies
           .map((currencyCode) => {
@@ -109,21 +111,16 @@ export class LiveRatesComponent implements OnInit {
               : null;
           })
           .filter((currencyData) => currencyData !== null) as ICurrency[];
-        console.log(JSON.stringify(this.currencyDataArray) + 'DATA ARRAYYY');
+        console.log(JSON.stringify(this.currencyDataArray) + 'DATA ARRAYYY'); //empty
+        // this.currencyService.showLoader = false;
 
         this.currencyDataArray.forEach((currencyData) => {
           console.log(currencyData.currencyCode + ' CURRENCY CODE');
-
-          // currencyData.rate = this.currencyService.convertCurrency(
-          //   currencyData,
-          //   1
-
           this.currencyService
             .convertCurrency(currencyData, 1)
             .subscribe((conversionResult) => {
               currencyData.rate = conversionResult;
             });
-          // );
           console.log(currencyData.rate + ' CURRENCY RATE');
         });
       });

@@ -17,7 +17,9 @@
       ></app-dropdown>
     </div>
   </div>
-
+  <!-- <button (click)="swapCurrencies()" class="btn blue-btn mt-10">
+    Swap Currencies
+  </button> -->
   <div class="dis-element">
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">To</label>
@@ -29,9 +31,16 @@
     <div class="div-input">
       <label for="" class="text-white text-size20 font-semibold">Amount</label>
 
-      <input class="amount-input" type="text" name="conversion_result" [(ngModel)]="conversion_result" readonly="readonly" >
+      <input
+        class="amount-input"
+        type="text"
+        name="conversion_result"
+        [(ngModel)]="conversion_result"
+        readonly="readonly"
+      />
     </div>
   </div>
+
   <button (click)="submit()" [disabled]="loading" class="btn blue-btn mt-10">  Convert</button>
   </main>
 

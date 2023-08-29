@@ -1,5 +1,0 @@
-<div class="convert-card  dis-element py-[73px] px-[98px] w-[700px] mx-auto mb-5 flex flex-col justify-between gap-10 ">
-    <toggle-btns [toggleData]="toggleData" (setActive$)="activeTab = $event"></toggle-btns>
-    <app-convert *ngIf="activeTab === 'convert'"></app-convert>
-    <app-compare *ngIf="activeTab === 'compare'"></app-compare>
-</div>

@@ -5,7 +5,9 @@
             outline-none
   }
 
-  
+  .p-component{
+    @apply mt-2
+  }
 
 .selected-flag{
   @apply w-[40px] h-[30px]

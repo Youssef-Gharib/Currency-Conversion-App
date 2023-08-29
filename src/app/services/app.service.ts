@@ -12,6 +12,7 @@ import { map } from 'rxjs';
   providedIn: 'root',
 })
 export class AppService {
+  showLoader = true;
   baseURL = 'http://ec2-18-134-206-213.eu-west-2.compute.amazonaws.com/api';
   currencies: ICurrency[] = [];
   selectedCurrencies: string[] = [];
@@ -47,6 +48,7 @@ export class AppService {
     return this.http.get<ICurrency[]>(`${this.baseURL}/v1/currency`).pipe(
       map((res: any) => {
         this.currencies = res.currency_list;
+        this.showLoader = false;
         return res.currency_list;
       })
     );

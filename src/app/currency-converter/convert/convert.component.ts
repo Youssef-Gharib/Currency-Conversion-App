@@ -77,4 +77,13 @@ export class ConvertComponent {
   //       return this.conversion_result;
   //     });
   // }
+  swapCurrencies() {
+    console.log('FROM BEFORE:' + this.currencyFrom.currencyCode);
+    console.log('TO BEFORE:' + this.currencyTo.currencyCode);
+    [this.currencyFrom, this.currencyTo] = [this.currencyTo, this.currencyFrom];
+    console.log('FROM AFTER:' + this.currencyFrom.currencyCode);
+    console.log('TO AFTER:' + this.currencyTo.currencyCode);
+    this.selectedCurrency = this.currencyFrom;
+    this.currencyFrom = this.currencyTo;
+  }
 }

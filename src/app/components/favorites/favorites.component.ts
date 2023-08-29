@@ -52,7 +52,6 @@ export class FavoritesComponent {
     });
   }
   onCheckboxChange(selectedCurrency: ICurrency) {
-    // if error change to any
     const selectedCurrencies = JSON.parse(
       localStorage.getItem('selectedCurrencies') || '[]'
     );

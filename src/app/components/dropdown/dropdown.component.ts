@@ -5,15 +5,16 @@ import { AppService } from 'src/app/services/app.service';
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent {
   @Input() selectedCurrency!: ICurrency;
+  @Input() currencies!: ICurrency[];
   @Output() getSelectedCurrency: EventEmitter<ICurrency> = new EventEmitter();
 
-  constructor(public appService: AppService) { }
-
-
-
-
+  constructor(public appService: AppService) {}
+  selectCurrency(currency: ICurrency) {
+    this.selectedCurrency = currency;
+    this.getSelectedCurrency.emit(currency);
+  }
 }

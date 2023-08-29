@@ -7,7 +7,7 @@ import {
   ICurrencyCompare,
   ICurrencyConvert,
 } from '../models/currency.model';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,6 +16,8 @@ export class ApiService {
   baseURL = 'http://ec2-18-134-206-213.eu-west-2.compute.amazonaws.com/api';
   currencies: ICurrency[] = [];
   showLoader = true;
+  fromCurrencyId = new BehaviorSubject<number>(0);
+  fromCurrency!: ICurrency;
   constructor(private http: HttpClient) {}
 
   getPortfolio() {
@@ -23,6 +25,12 @@ export class ApiService {
       ? JSON.parse(localStorage.getItem('myPortfolio') || '[]')
       : [];
     return myPortfolio;
+  }
+  getFromCurrency() {
+    return this.fromCurrency;
+  }
+  getFromCurrencyId() {
+    return this.fromCurrencyId;
   }
 
   updatePortfolio(currency: ICurrency) {

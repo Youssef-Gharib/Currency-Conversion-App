@@ -1,21 +1,28 @@
 <div class="bg-white">
-    <div class="container mx-auto max-sm:px-2">
-        <div class="flex justify-between py-11 flex-wrap">
-            <h1 class="text-3xl max-sm:mb-3">live exchange rates</h1>
-            <add-to-fav-btn (onSelectCurrency)="getSelectedCurrency($event)" [currencies]="currencies"></add-to-fav-btn>
-        </div>
-
-        <section>
-            <h1 class="font-bold mb-8">My Portfolio</h1>
-            <ul class="grid md:grid-cols-2 gap-y-8 gap-x-20 portfolio-list sm:grid-cols-1">
-                <li *ngFor="let c of portfolioCurrencies" class="border-b border-neutral-100">
-                    <app-portfolio-card [currency]="c"></app-portfolio-card>
-                </li>
-                <li *ngIf="portfolioCurrencies.length === 0" class="my-5">
-                    <small class="text-neutral-500">Portfolio is empty. Please use "Add to favorite" button to add.</small>
-                </li>
-            </ul>
-        </section>
-
+  <div class="container mx-auto max-sm:px-2">
+    <div class="flex justify-between py-11 flex-wrap">
+      <h1 class="text-3xl max-sm:mb-3">live exchange rates</h1>
+      <add-to-fav-btn
+        (onSelectCurrency)="getSelectedCurrency($event)"
+        [currencies]="currencies"
+      ></add-to-fav-btn>
     </div>
+
+    <section>
+      <h1 class="font-bold mb-8">My Portfolio</h1>
+      <ul
+        class="grid md:grid-cols-2 gap-y-8 gap-x-20 portfolio-list sm:grid-cols-1"
+      >
+        <li
+          *ngFor="let c of portfolioCurrencies"
+          class="border-b border-neutral-100"
+        >
+          <app-portfolio-card [currency]="c"></app-portfolio-card>
+        </li>
+        <li *ngIf="portfolioCurrencies.length === 0" class="my-5">
+          <!-- <small class="text-neutral-500">Portfolio is empty. Please use "Add to favorite" button to add.</small> -->
+        </li>
+      </ul>
+    </section>
+  </div>
 </div>

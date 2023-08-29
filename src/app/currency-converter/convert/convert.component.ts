@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './convert.component.html',
   styleUrls: ['./convert.component.scss'],
 })
-export class ConvertComponent implements OnInit{
+export class ConvertComponent implements OnInit {
   loading = false;
   selectedCurrencyFrom: ICurrency = {
     id: 11,
@@ -24,10 +24,10 @@ export class ConvertComponent implements OnInit{
   currencyFrom: ICurrency = this.selectedCurrencyFrom;
   currencyTo: ICurrency = this.selectedCurrencyTo;
   conversion_result!: number;
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-      this.submit();
+    this.submit();
   }
 
   submit() {
@@ -37,12 +37,14 @@ export class ConvertComponent implements OnInit{
       to: this.currencyTo.id,
       amount: this.amount,
     };
-
-    this.apiService.convert(data).pipe(finalize(() => this.loading = false)).subscribe({
-      next: (res) => {
-        this.conversion_result = res.conversion_result;
-      },
-    });
+    this.apiService.fromCurrencyId.next(this.currencyFrom.id);
+    this.apiService
+      .convert(data)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe({
+        next: (res) => {
+          this.conversion_result = res.conversion_result;
+        },
+      });
   }
-
 }

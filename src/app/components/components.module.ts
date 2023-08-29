@@ -7,22 +7,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PageLoaderComponent } from './page-loader/page-loader.component';
 
 @NgModule({
-
-  declarations: [
-    ToggleBtnsComponent,
-    DropdownComponent,
-    PageLoaderComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    DropdownModule,
-
-  ],
-  exports: [
-    ToggleBtnsComponent,
-    DropdownComponent
-  ]
-
+  declarations: [ToggleBtnsComponent, DropdownComponent],
+  imports: [CommonModule, FormsModule, DropdownModule],
+  exports: [ToggleBtnsComponent, DropdownComponent],
 })
 export class ComponentsModule {}

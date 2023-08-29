@@ -15,6 +15,35 @@ export class LiveExchangeRatesComponent {
 
   ngOnInit(): void {
     this.getCurrencies();
+    this.getCompare();
+  }
+
+  getPortofolioIds() {
+    let ids: number[] = [];
+    this.portfolioCurrencies.forEach((el) => {
+      ids.push(el.id);
+    });
+    return ids;
+  }
+
+  getCompare() {
+    this.apiService.fromCurrencyId.subscribe((id) => {
+      this.apiService
+        .compare({
+          amount: 1,
+          baseCurrencyId: id,
+          targetCurrencyIds: this.getPortofolioIds(),
+        })
+        .subscribe({
+          next: (res) => {
+            console.log(res);
+
+            this.portfolioCurrencies.map((c, index) => {
+              c.rate = res.compare_result[index];
+            });
+          },
+        });
+    });
   }
 
   getCurrencies() {

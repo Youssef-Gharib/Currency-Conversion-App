@@ -13,22 +13,20 @@ export class CompareComponent implements OnInit {
 
   loading = false;
   selectedCurrency: ICurrency = {
-    "id": 11,
-    "currencyCode": "EGP",
-    "flagUrl": "https://flagcdn.com/h60/eg.png"
-
+    id: 11,
+    currencyCode: 'EGP',
+    flagUrl: 'https://flagcdn.com/h60/eg.png',
   };
   selectedCurrency1: ICurrency = {
-    "id": 1,
-    "currencyCode": "USD",
-    "flagUrl": "https://flagcdn.com/h60/us.png"
+    id: 1,
+    currencyCode: 'USD',
+    flagUrl: 'https://flagcdn.com/h60/us.png',
   };
   selectedCurrency2: ICurrency = {
-    "id": 3,
-    "currencyCode": "GBP",
-    "flagUrl": "https://flagcdn.com/h60/gb.png"
+    id: 3,
+    currencyCode: 'GBP',
+    flagUrl: 'https://flagcdn.com/h60/gb.png',
   };
-
 
   amount: number = 1;
   currencyFrom: ICurrency = this.selectedCurrency;
@@ -36,7 +34,8 @@ export class CompareComponent implements OnInit {
   currency2To: ICurrency = this.selectedCurrency2;
   result1!: number;
   result2!: number;
-  constructor(private apiService: ApiService) { }
+
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.submit();
@@ -47,21 +46,22 @@ export class CompareComponent implements OnInit {
     let data: ICurrencyCompare = {
       amount: this.amount,
       baseCurrencyId: this.currencyFrom.id,
-      targetCurrencyIds: [this.currency1To.id, this.currency2To.id]
-    }
+      targetCurrencyIds: [this.currency1To.id, this.currency2To.id],
+    };
 
-    this.apiService.compare(data).pipe(finalize(() => this.loading = false)).subscribe({
-      next: (res) => {
-        this.result1 = res.compare_result[0];
-        this.result2 = res.compare_result[1];
+    this.apiService
+      .compare(data)
+      .pipe(finalize(() => (this.loading = false)))
+      .subscribe({
+        next: (res) => {
+          this.result1 = res.compare_result[0];
+          this.result2 = res.compare_result[1];
 
-        let res1 = { ...this.currency1To, ...{ rate: this.result1 } };
-        let res2 = { ...this.currency2To, ...{ rate: this.result2 } };
+          let res1 = { ...this.currency1To, ...{ rate: this.result1 } };
+          let res2 = { ...this.currency2To, ...{ rate: this.result2 } };
 
-        this.onAction.emit([res1, res2]);
-      }
-    })
-  };
-
+          this.onAction.emit([res1, res2]);
+        },
+      });
+  }
 }
-
